@@ -1993,6 +1993,12 @@
    "hue": "slate"
   },
   {
+   "name": "x-circle",
+   "cat": "status",
+   "kw": "오류 실패 취소 error fail close circle",
+   "hue": "red"
+  },
+  {
    "name": "yen",
    "cat": "indices",
    "kw": "엔 JPY 통화 yen",
