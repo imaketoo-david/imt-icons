@@ -7,14 +7,26 @@ ROOT = os.environ.get("IMT_ROOT", os.path.expanduser("~/imt-icons/dist"))
 os.makedirs(f"{ROOT}/icons/glyph", exist_ok=True)
 os.makedirs(f"{ROOT}/icons/badge", exist_ok=True)
 
-def body(ops, stroke_attr='currentColor', fill_attr='currentColor', sw=STROKE):
+def body(ops, stroke_attr='currentColor', fill_attr='currentColor', sw=STROKE,
+         inherit=False):
+    """inherit=True 면 획 속성을 심볼에 박지 않고 바깥 CSS 에서 상속받게 둔다.
+
+    <use> 로 꺼내 쓰는 스프라이트 전용이다. 그림자 DOM 은 바깥 CSS '선택자'
+    가 못 넘어가지만 '상속되는 속성'은 넘어간다 — 그래서 <g> 에 박힌
+    표현 속성을 빼야 .imt-i 의 stroke-width 가 안까지 닿는다.
+    이 한 가지로 334개 전부가 굵기 축을 갖는다(애플은 9벌을 그려야 한다).
+
+    단독 파일(icons/glyph/*.svg)은 우리 CSS 없이도 그대로 보여야 하므로
+    inherit=False 로 속성을 박아 둔다.
+    """
     out = []
     s = [d for k, d in ops if k == "s"]
     f = [d for k, d in ops if k == "f"]
     if s:
-        out.append(f'<g fill="none" stroke="{stroke_attr}" stroke-width="{sw}" '
-                   f'stroke-linecap="round" stroke-linejoin="round">'
-                   + "".join(f'<path d="{d}"/>' for d in s) + '</g>')
+        attrs = f'fill="none" stroke="{stroke_attr}"'
+        if not inherit:
+            attrs += f' stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round"'
+        out.append(f'<g {attrs}>' + "".join(f'<path d="{d}"/>' for d in s) + '</g>')
     if f:
         out.append(f'<g fill="{fill_attr}" stroke="none">'
                    + "".join(f'<path d="{d}"/>' for d in f) + '</g>')
@@ -63,7 +75,8 @@ for name, ic in sorted(ICONS.items()):
 # ---- sprite
 sym = []
 for name, ic in sorted(ICONS.items()):
-    sym.append(f'<symbol id="i-{name}" viewBox="0 0 24 24">{body(ic["ops"])}</symbol>')
+    sym.append(f'<symbol id="i-{name}" viewBox="0 0 24 24">'
+               f'{body(ic["ops"], inherit=True)}</symbol>')
 sprite = ('<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">'
           + "".join(sym) + '</svg>')
 open(f"{ROOT}/sprite.svg", "w").write(sprite)
