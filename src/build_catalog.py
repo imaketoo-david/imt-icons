@@ -21,6 +21,10 @@ DATA = {n: {"c": ICONS[n]["cat"], "k": ICONS[n]["kw"], "h": ICONS[n]["hue"],
 HTML = """<!doctype html>
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1d1d1f">
 <title>IMT Icons</title>
 <style>
 __TOKENS__
@@ -30,33 +34,33 @@ __TOKENS__
 __PAL__
 }
 
-/* ── 사이트 셸 — design.imaketoo.com 과 같은 2단 내비 ── */
-.gnav{position:sticky;top:0;z-index:var(--z-nav);height:48px;background:#1d1d1f;color:#f5f5f7;
- display:flex;align-items:center;padding:0 var(--sp-5);gap:var(--sp-5);font-size:var(--fs-sm)}
-.gnav__b{display:flex;align-items:center;gap:7px;color:#f5f5f7;text-decoration:none;
- font-weight:var(--fw-sb);letter-spacing:var(--tr-sm)}
-.gnav__b svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.9;
+/* ── 사이트 셸 — design.imaketoo.com 과 **같은 한 줄 내비** (2026-09-03) ──
+   전에는 검은 띠 + 흰 띠 두 줄이었다. 값은 design 쪽 site.css 의 .gnav 와
+   같게 유지한다 — 두 사이트가 한 도메인이 된 이상 상단바가 갈라지면 안 된다. */
+.gnav{position:sticky;top:0;z-index:var(--z-nav);height:52px;
+ display:flex;align-items:center;gap:var(--sp-6);padding:0 var(--sp-6);
+ background:var(--mat);backdrop-filter:var(--mat-blur);-webkit-backdrop-filter:var(--mat-blur);
+ border-bottom:var(--hairline) solid var(--line);font-size:var(--fs-md)}
+.gnav__b{display:flex;align-items:center;gap:var(--sp-2);color:var(--ink);text-decoration:none;
+ font-weight:var(--fw-sb);font-size:var(--fs-base);letter-spacing:var(--tr-xl);white-space:nowrap}
+.gnav__b svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.9;
  stroke-linecap:round;stroke-linejoin:round}
-.gnav a{color:#d1d1d6;text-decoration:none;white-space:nowrap}
-.gnav a:hover{color:#fff}
+.gnav__i{display:flex;gap:var(--sp-5);overflow-x:auto;scrollbar-width:none}
+.gnav__i::-webkit-scrollbar{display:none}
+.gnav__i a{position:relative;display:inline-flex;align-items:center;height:52px;
+ color:var(--sub);text-decoration:none;white-space:nowrap}
+.gnav__i a:hover{color:var(--ink)}
+.gnav__i a.on{color:var(--ink);font-weight:var(--fw-m)}
+.gnav__i a.on::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;
+ border-radius:var(--r-cap) var(--r-cap) 0 0;background:var(--ink)}
 .gnav__sp{margin-left:auto}
-.gnav__t{background:rgba(255,255,255,.14);color:#f5f5f7;border:0;border-radius:var(--r-cap);
- height:26px;padding:0 12px;font:var(--fw-m) var(--fs-sm) var(--font);cursor:pointer}
-.gnav__t:hover{background:rgba(255,255,255,.22)}
-.lnav{position:sticky;top:48px;z-index:calc(var(--z-nav) - 1);height:48px;display:flex;
- align-items:center;gap:var(--sp-5);padding:0 var(--sp-5);background:var(--mat);
- backdrop-filter:var(--mat-blur);-webkit-backdrop-filter:var(--mat-blur);
- border-bottom:var(--hairline) solid var(--line)}
-.lnav__t{font:var(--fw-sb) var(--fs-xl)/1 var(--font);letter-spacing:var(--tr-xl);
- color:var(--ink);text-decoration:none;white-space:nowrap}
-.lnav__i{display:flex;gap:var(--sp-4);margin-left:auto;overflow-x:auto;scrollbar-width:none}
-.lnav__i::-webkit-scrollbar{display:none}
-.lnav__i a{position:relative;color:var(--sub);text-decoration:none;font-size:var(--fs-md);
- line-height:48px;white-space:nowrap}
-.lnav__i a:hover{color:var(--ink)}
-.lnav__i a.on{color:var(--ink);font-weight:var(--fw-m)}
-.lnav__i a.on::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;
- border-radius:2px 2px 0 0;background:var(--ink)}
+.gnav__x{display:inline-flex;align-items:center;color:var(--sub);text-decoration:none;
+ white-space:nowrap;font-size:var(--fs-sm)}
+.gnav__x:hover{color:var(--ink)}
+.gnav__t{background:var(--fill4);color:var(--ink2);border:0;border-radius:var(--r-cap);
+ height:30px;padding:0 var(--sp-3);font:var(--fw-m) var(--fs-sm) var(--font);cursor:pointer}
+.gnav__t:hover{background:var(--fill3);color:var(--ink)}
+@media(max-width:640px){ .gnav{gap:var(--sp-4);padding:0 var(--sp-4)} .gnav__x{display:none} }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
  font:400 15px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Pretendard","Apple SD Gothic Neo",system-ui,sans-serif;
@@ -134,23 +138,19 @@ dialog::backdrop{background:rgba(0,0,0,.36);backdrop-filter:blur(3px)}
 footer{color:var(--sub);font-size:12.5px;text-align:center;margin-top:52px;line-height:1.8}
 </style></head><body>
 <nav class="gnav">
-  <a class="gnav__b" href="https://design.imaketoo.com/index.html">
+  <a class="gnav__b" href="/index.html">
    <svg viewBox="0 0 24 24"><path d="M12 3.8l8 4.2-8 4.2-8-4.2z"/><path d="M4.4 12.6L12 16.6l7.6-4"/><path d="M4.4 16.8L12 20.8l7.6-4"/></svg>IMT Design</a>
-  <span class="gnav__sp"></span>
-  <a href="https://design.imaketoo.com/guide/index.html">가이드</a>
-  <a href="https://github.com/imaketoo-david/imt-icons">GitHub</a>
-  <button class="gnav__t" id="theme">다크</button>
-</nav>
-<nav class="lnav">
-  <a class="lnav__t" href="https://design.imaketoo.com/index.html">디자인 시스템</a>
-  <div class="lnav__i">
-    <a href="https://design.imaketoo.com/index.html">개요</a>
-    <a href="https://design.imaketoo.com/guide/index.html">가이드</a>
-    <a href="https://design.imaketoo.com/language.html">랭귀지</a>
-    <a href="https://design.imaketoo.com/index-full.html">토큰</a>
+  <div class="gnav__i">
+    <a href="/index.html">개요</a>
+    <a href="/guide/index.html">가이드</a>
+    <a href="/language.html">랭귀지</a>
+    <a href="/index-full.html">토큰</a>
     <a href="catalog.html" class="on">아이콘</a>
-    <a href="https://design.imaketoo.com/resources.html">리소스</a>
+    <a href="/resources.html">리소스</a>
   </div>
+  <span class="gnav__sp"></span>
+  <a class="gnav__x" href="https://github.com/imaketoo-david/imt-icons">GitHub</a>
+  <button class="gnav__t" id="theme">다크</button>
 </nav>
 <div class="wrap">
 <header class="phead">

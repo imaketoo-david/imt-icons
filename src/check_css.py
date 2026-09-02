@@ -27,7 +27,9 @@ if bad:
     sys.exit(1)
 
 # 셸 규칙이 실제로 살아 있는지
-need = [".gnav{", ".lnav{", ".phead{", ".cols{", ".side{"]
+# .lnav 는 2026-09-03 에 없앴다 — 내비가 한 줄로 합쳐졌다.
+# 대신 .gnav__i(섹션 링크)가 살아 있는지 본다: 그게 빠지면 내비가 이름표만 남는다.
+need = [".gnav{", ".gnav__i{", ".phead{", ".cols{", ".side{"]
 miss = [n for n in need if n not in css.replace(" {", "{")]
 if miss:
     print("✗ 셸 규칙 누락:", " ".join(miss)); sys.exit(1)
