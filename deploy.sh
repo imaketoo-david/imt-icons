@@ -15,7 +15,7 @@ if [[ -n "$(git status --porcelain)" ]]; then
   git add -A
   git commit -q -m "${1:-배포 $(date '+%Y-%m-%d %H:%M')}"
 fi
-git push -q origin main
+git push -q origin main 2>/dev/null || echo "  (푸시 건너뜀 — 인증 없음)"
 echo "  $(git log --oneline -1)"
 
 echo "▸ 3. 맥미니 전송 (${HOST})"

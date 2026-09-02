@@ -3,9 +3,406 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>IMT Icons</title>
 <style>
+/* ══════════════════════════════════════════════════════════════
+   IMT Design System v2 — tokens.css
+   단일 진실. 이 파일 밖에서 색·간격·라운드를 하드코딩하지 않는다.
+
+   출처: stock-sim 의 구조(라운드 규칙·폰트 단계·이징)를 그대로 유지하고,
+         my-speak 의 iOS 시스템색·라벨 위계·채움·다크모드를 흡수했다.
+         기존 이름은 전부 보존 → sim·marketing 은 수정 없이 동작한다.
+
+   v2 (2026-09) — Apple HIG 실측 대조 반영.
+     · Materials: 표준 4단(ultraThin/thin/regular/thick) + Liquid Glass 분리
+     · Color: placeholderText·link·opaqueSeparator·system 배경셋 추가
+     · Typography: Apple 텍스트 스타일 누락 단계(16/22/28) + 실측 leading
+     · Accessibility: 컨트롤 크기·히트영역 토큰, prefers-contrast/transparency 블록
+   근거: HIG Materials·Color·Typography·Accessibility·Buttons·Layout (2026-09-02 열람)
+   주의: Apple 은 "시스템 색 값을 하드코딩하지 말라" 고 명시한다. 아래 값은
+         웹에서 시스템 API 를 쓸 수 없어 고정한 것이며, '의미' 가 진실이지 값이 아니다.
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+  color-scheme: light;
+
+  /* ─── 면 ────────────────────────────────────────────────────
+     배경은 회색조, 카드는 순백. 둘 다 흰색이면 경계가 사라진다.
+     애플은 그림자가 아니라 '배경 대비' 로 면을 나눈다. */
+  --bg:        #f2f2f7;   /* systemGroupedBackground */
+  --card:      #ffffff;   /* secondarySystemGroupedBackground */
+  --inset:     #f5f5f8;   /* 카드 안의 강조 면 */
+  --sheet:     #ffffff;   /* 모달·시트 */
+
+  /* system 배경셋 — HIG 는 grouped 와 system 두 벌을 정의한다.
+     grouped(위 --bg/--card/--inset) = 그룹 테이블뷰용,
+     system(아래) = 그 외 일반 화면용. 의미를 바꿔 쓰지 않는다. */
+  --bg-sys:    #ffffff;   /* systemBackground */
+  --bg-sys-2:  #f2f2f7;   /* secondarySystemBackground */
+  --bg-sys-3:  #ffffff;   /* tertiarySystemBackground */
+
+  /* ─── 표준 머티리얼 (콘텐츠 레이어) ───────────────────────────
+     두께가 얇을수록 뒤가 비치고, 두꺼울수록 대비가 확보된다.
+     HIG: 얇은 재질 위에 quaternary 단계 글자를 올리지 않는다. */
+  --mat-ultrathin: rgba(255,255,255,.55);
+  --mat-thin:      rgba(255,255,255,.70);
+  --mat:           rgba(249,249,249,.82);   /* regular = 기본 */
+  --mat-thick:     rgba(249,249,249,.93);
+  --mat-blur:      saturate(180%) blur(20px);
+
+  /* ─── Liquid Glass (컨트롤·내비게이션 레이어 전용) ─────────────
+     HIG: 콘텐츠 레이어에는 쓰지 않는다. 커스텀 컨트롤에는 아껴 쓴다.
+     regular = 배경 휘도를 조정해 가독성 확보 (기본)
+     clear   = 사진·영상 위에서만. 밝은 콘텐츠 위라면 --glass-dim 을 깐다. */
+  --glass:       rgba(255,255,255,.60);
+  --glass-clear: rgba(255,255,255,.16);
+  --glass-blur:  saturate(180%) blur(24px);
+  --glass-line:  rgba(255,255,255,.55);
+  --glass-sh:    0 1px 1px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.10);
+  --glass-dim:   rgba(0,0,0,.35);   /* HIG 명시값: 35% */
+  /* 스크롤 엣지 이펙트 — 컨트롤 아래로 콘텐츠가 지나갈 때의 전환 */
+  --scroll-edge: linear-gradient(to bottom, rgba(255,255,255,.92), rgba(255,255,255,0));
+
+  /* ─── 선 ─── */
+  --line:        #dcdce2;   /* separator — 뒤가 비치는 구분선 */
+  --line-soft:   #ebebf0;
+  --line-opaque: #c6c6c8;   /* opaqueSeparator — 뒤가 비치지 않는 구분선 */
+  --hairline:    .5px;
+
+  /* ─── 글자 4단계 ─── */
+  --ink:  #1d1d1f;   /* label */
+  --ink2: #424245;   /* secondaryLabel */
+  --sub:  #6e6e74;   /* tertiaryLabel — v1 #7c7c82 은 --bg 위에서 3.72:1 로 미달 */
+  --sub2: #a4a4aa;   /* quaternaryLabel — 비활성 전용. 대비 기준 면제 대상 */
+
+  /* HIG 는 placeholderText 와 link 를 별도 의미색으로 정의한다.
+     v1 은 이 둘을 --sub2 / --brand 로 겸용했다 → 의미 혼용을 끊는다. */
+  --placeholder: #6e6e78;   /* 입력 힌트 — 실제 글자이므로 4.5:1 확보 */
+  --link:        #006cda;   /* 본문 링크 — --brand(버튼 면색)와 용도가 다르다 */
+
+  /* ─── 채움 4단계 (칩·트랙·스켈레톤) ─── */
+  --fill1: rgba(120,120,128,.20);
+  --fill2: rgba(120,120,128,.16);
+  --fill3: rgba(118,118,128,.12);
+  --fill4: rgba(116,116,128,.08);
+
+  /* ─── 강조 ───────────────────────────────────────────────────
+     --brand 만 사이트가 덮어쓴다. 나머지는 공통. */
+  --blue:       #0071e3;
+  --blue-hover: #0077ed;
+  --blue-soft:  #e8f1fd;
+  --brand:      var(--blue);
+  --brand-hover:var(--blue-hover);
+  --brand-soft: var(--blue-soft);
+
+  /* ─── iOS 시스템색 ─── */
+  --green:  #34c759;  --green-soft:  rgba(52,199,89,.14);
+  --red:    #ff3b30;  --red-soft:    rgba(255,59,48,.12);
+  --orange: #ff9500;  --orange-soft: rgba(255,149,0,.14);
+  --yellow: #ffcc00;
+  --teal:   #30b0c7;
+  --indigo: #5856d6;
+  --pink:   #ff2d55;
+
+  /* ─── 등락 (한국 관례: 상승 빨강 / 하락 파랑) ─── */
+  --up:   #e0392e;  --up-soft:   #fceceb;
+  --down: #0071e3;  --down-soft: #e8f1fd;
+  --flat: #86868b;   /* 비텍스트 그래픽 3:1 기준 (v1 #a4a4aa 은 2.48) */
+
+  /* ─── 상태 ───────────────────────────────────────────────────
+     의미가 고정된 색. 차트 시리즈로 재사용하지 않는다.
+     반드시 아이콘·라벨과 함께 쓴다 (색만으로 상태를 전달 금지). */
+  --ok:     #1f8a48;
+  --warn:   #b8811f;
+  --danger: #c8322a;
+  --info:   #0f8fc4;
+
+  /* ─── 차트 ───────────────────────────────────────────────────
+     8슬롯 고정 순서. 순환 금지 — 9번째 시리즈는 '기타' 로 접는다.
+     명도대비·색각(CVD)·채도 검사 전 항목 통과. 라이트/다크 동일값. */
+  --c1:#2C6BED; --c2:#D9631F; --c3:#159B90; --c4:#B8811F;
+  --c5:#C43A80; --c6:#0F8FC4; --c7:#7F55D4; --c8:#1F8A48;
+  --grid: rgba(0,0,0,.06);
+  --axis: #86868b;
+
+  /* ─── 라운드 ─────────────────────────────────────────────────
+     박스는 하나의 라운드만 쓴다 — 카드·패널·버튼·드롭다운·탭 전부.
+     예외는 셋뿐이다.
+       --r-in    세그먼트 '안쪽' (바깥 − 패딩 = 동심원이 맞는다)
+       --r-xs    글자만 한 배지·태그 (16px 이면 뭉개진다)
+       --r-sheet 시트·대형 모달
+     원형(50%)은 아이콘 버튼·실시간 점에만. */
+  --r:       16px;
+  --r-in:    13px;
+  --r-xs:    6px;
+  --r-sheet: 22px;
+  --r-cap:   999px;  /* 캡슐 — 애플 현행 버튼 기본형(텍스트/텍스트+아이콘) */
+  --r-xl: var(--r); --r-lg: var(--r); --r-md: var(--r); --r-sm: var(--r);
+
+  /* ─── 컨트롤 크기 ────────────────────────────────────────────
+     HIG 실측표. '보이는 크기' 가 아니라 '히트영역' 이 기준이다 —
+     38px 버튼이라도 패딩으로 44px 를 확보하면 규격을 만족한다. */
+  --tap:       44px;  /* iOS·iPadOS·watchOS 기본 컨트롤 크기 */
+  --tap-min:   28px;  /* iOS 최소 */
+  --tap-vision:60px;  /* visionOS 기본 */
+  --ctl:       28px;  /* macOS 기본 */
+  --ctl-min:   20px;  /* macOS 최소 */
+  --gap-ctl:      12px;  /* 베젤 있는 요소 주위 여백 */
+  --gap-ctl-plain:24px;  /* 베젤 없는 요소 주위 여백 */
+
+  /* ─── 간격 ───────────────────────────────────────────────────
+     4의 배수만. 6px·10px·14px 같은 중간값을 허용하면
+     금방 20가지로 불어나고 리듬이 사라진다. */
+  --sp-1:4px;  --sp-2:8px;  --sp-3:12px; --sp-4:16px; --sp-5:20px;
+  --sp-6:24px; --sp-8:32px; --sp-10:40px; --sp-12:48px; --sp-16:64px;
+
+  /* ─── 그림자 ─── */
+  --edge:    0 0 0 1px rgba(0,0,0,.045);
+  --sh:      var(--edge), 0 1px 2px rgba(0,0,0,.04), 0 6px 16px rgba(0,0,0,.06);
+  --sh-lift: var(--edge), 0 4px 10px rgba(0,0,0,.06), 0 16px 36px rgba(0,0,0,.1);
+  --ring:    0 0 0 4px rgba(0,113,227,.16);
+
+  /* ─── 타이포 ─────────────────────────────────────────────────
+     정해진 단계만 쓴다. 11.5px 같은 값을 허용하면
+     눈은 그 차이를 위계로 읽지 못한다. */
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Pretendard",
+          "Apple SD Gothic Neo", system-ui, sans-serif;
+  --font-num: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, monospace;
+
+  /* 괄호 안은 대응하는 Apple 텍스트 스타일(iOS Large 기준). */
+  --fs-tag:10px;   /* 배지 — macOS Caption 최소치. iOS 최소(11pt)보다 작다 */
+  --fs-xs:11px;    /* 보조 설명 (Caption 2, iOS 최소치) */
+  --fs-sm:12px;    /* 라벨 (Caption 1) */
+  --fs-md:13px;    /* 본문 (Footnote / macOS Body) */
+  --fs-base:15px;  /* 값 (Subhead) */
+  --fs-callout:16px; /* (Callout) — v1 누락분 */
+  --fs-lg:17px;    /* 강조 값 (Body·Headline, iOS 기본 크기) */
+  --fs-xl:20px;    /* 섹션 제목 (Title 3) */
+  --fs-title2:22px;  /* (Title 2) — v1 누락분 */
+  --fs-2xl:26px;   /* 요약 숫자 (macOS Large Title) */
+  --fs-title1:28px;  /* (Title 1) — v1 누락분 */
+  --fs-3xl:34px;   /* 히어로 (Large Title) */
+  /* 문서 표지 전용. 앱 UI 에는 쓰지 않는다 — 애플도 웹 표지에는
+     Dynamic Type 스케일보다 큰 크기를 따로 쓴다. */
+  --fs-hero:clamp(34px, 5.2vw, 52px);
+
+  /* HIG: Ultralight·Thin·Light 는 쓰지 않는다. Regular 이상만 둔다. */
+  --fw-r:400; --fw-m:500; --fw-sb:600;
+
+  --lh-tight:1.15; --lh-snug:1.35; --lh-base:1.55;
+  /* Apple 실측 leading ÷ size. 한글 본문은 --lh-base 를 그대로 쓰고,
+     영문·숫자 위주의 제목·수치에는 아래 값을 쓴다. */
+  --lh-title:1.21;  /* 34/41 · 28/34 */
+  --lh-head:1.29;   /* 17/22 */
+  --lh-body:1.33;   /* 15/20 · 12/16 */
+  --lh-cap:1.18;    /* 11/13 */
+  /* 큰 글자일수록 자간을 좁힌다 — 애플 타이포의 핵심 */
+  --tr-3xl:-.024em; --tr-2xl:-.02em; --tr-xl:-.016em;
+  --tr-base:-.008em; --tr-sm:-.003em;
+
+  /* ─── 모션 ─── */
+  --ease:   cubic-bezier(.4,0,.2,1);
+  --spring: cubic-bezier(.34,1.4,.5,1);
+  --dur-1:.12s; --dur-2:.2s; --dur-3:.32s;
+
+  /* ─── 레이어 ─── */
+  --z-nav:100; --z-sticky:200; --z-drop:300; --z-modal:400; --z-toast:500;
+
+  /* ─── 폭 ─── */
+  --w-content:720px; --w-wide:1120px; --w-full:1440px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   다크 — 자동 반전이 아니라 별도로 고른 값.
+   면은 올리고(#000 아님), 글자는 내리고, 그림자 대신 테두리로 면을 나눈다.
+   ══════════════════════════════════════════════════════════════ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { color-scheme: dark; }
+  :root:not([data-theme="light"]) {
+    --bg:#000000; --card:#1c1c1e; --inset:#2c2c2e; --sheet:#1c1c1e;
+    --mat:rgba(30,30,32,.82);
+    --bg-sys:#000000; --bg-sys-2:#1c1c1e; --bg-sys-3:#2c2c2e;
+    --mat-ultrathin:rgba(30,30,32,.55); --mat-thin:rgba(30,30,32,.70);
+    --mat-thick:rgba(28,28,30,.94);
+    --glass:rgba(58,58,60,.55); --glass-clear:rgba(255,255,255,.10);
+    --glass-line:rgba(255,255,255,.14);
+    --glass-sh:0 1px 1px rgba(0,0,0,.5), 0 8px 24px rgba(0,0,0,.55);
+    --glass-dim:rgba(0,0,0,.35);
+    --scroll-edge:linear-gradient(to bottom, rgba(28,28,30,.92), rgba(28,28,30,0));
+    --line-opaque:#48484a;
+    --placeholder:#8e8e93; --link:#0a84ff;
+    --flat:#8e8e93;
+
+    --line:#38383a; --line-soft:#2c2c2e;
+
+    --ink:#f5f5f7; --ink2:#d1d1d6; --sub:#98989f; --sub2:#6c6c72;
+
+    --fill1:rgba(120,120,128,.36); --fill2:rgba(120,120,128,.30);
+    --fill3:rgba(118,118,128,.24); --fill4:rgba(116,116,128,.18);
+
+    --blue:#0a84ff; --blue-hover:#3b9bff; --blue-soft:rgba(10,132,255,.18);
+    --green:#30d158; --red:#ff453a; --orange:#ff9f0a;
+    --yellow:#ffd60a; --teal:#40cbe0; --indigo:#5e5ce6; --pink:#ff375f;
+
+    --up:#ff5f52; --up-soft:rgba(255,95,82,.16);
+    --down:#0a84ff; --down-soft:rgba(10,132,255,.16);
+
+    --ok:#30d158; --warn:#ffd60a; --danger:#ff453a; --info:#40cbe0;
+
+    --grid:rgba(255,255,255,.08); --axis:#6c6c72;
+
+    --edge:0 0 0 1px rgba(255,255,255,.07);
+    --sh:var(--edge), 0 1px 2px rgba(0,0,0,.5);
+    --sh-lift:var(--edge), 0 8px 28px rgba(0,0,0,.6);
+    --ring:0 0 0 4px rgba(10,132,255,.28);
+  }
+}
+
+/* 사용자 토글이 OS 설정을 이긴다 */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:#000000; --card:#1c1c1e; --inset:#2c2c2e; --sheet:#1c1c1e;
+  --mat:rgba(30,30,32,.82);
+  --bg-sys:#000000; --bg-sys-2:#1c1c1e; --bg-sys-3:#2c2c2e;
+  --mat-ultrathin:rgba(30,30,32,.55); --mat-thin:rgba(30,30,32,.70);
+  --mat-thick:rgba(28,28,30,.94);
+  --glass:rgba(58,58,60,.55); --glass-clear:rgba(255,255,255,.10);
+  --glass-line:rgba(255,255,255,.14);
+  --glass-sh:0 1px 1px rgba(0,0,0,.5), 0 8px 24px rgba(0,0,0,.55);
+  --glass-dim:rgba(0,0,0,.35);
+  --scroll-edge:linear-gradient(to bottom, rgba(28,28,30,.92), rgba(28,28,30,0));
+  --line-opaque:#48484a;
+  --placeholder:#8e8e93; --link:#0a84ff;
+  --flat:#8e8e93;
+  --line:#38383a; --line-soft:#2c2c2e;
+  --ink:#f5f5f7; --ink2:#d1d1d6; --sub:#98989f; --sub2:#6c6c72;
+  --fill1:rgba(120,120,128,.36); --fill2:rgba(120,120,128,.30);
+  --fill3:rgba(118,118,128,.24); --fill4:rgba(116,116,128,.18);
+  --blue:#0a84ff; --blue-hover:#3b9bff; --blue-soft:rgba(10,132,255,.18);
+  --green:#30d158; --red:#ff453a; --orange:#ff9f0a;
+  --yellow:#ffd60a; --teal:#40cbe0; --indigo:#5e5ce6; --pink:#ff375f;
+  --up:#ff5f52; --up-soft:rgba(255,95,82,.16);
+  --down:#0a84ff; --down-soft:rgba(10,132,255,.16);
+  --ok:#30d158; --warn:#ffd60a; --danger:#ff453a; --info:#40cbe0;
+  --grid:rgba(255,255,255,.08); --axis:#6c6c72;
+  --edge:0 0 0 1px rgba(255,255,255,.07);
+  --sh:var(--edge), 0 1px 2px rgba(0,0,0,.5);
+  --sh-lift:var(--edge), 0 8px 28px rgba(0,0,0,.6);
+  --ring:0 0 0 4px rgba(10,132,255,.28);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   대비 강화 — 시스템 설정 'Increase Contrast' 대응.
+   HIG: "기본값이 최소 대비를 만족하지 못한다면, 최소한 Increase Contrast
+   가 켜졌을 때 더 높은 대비의 색 구성을 제공하라."
+   Apple 자신도 systemRed 에 별도 accessible 변형을 둔다.
+   아래 값은 흰 배경 및 각자의 -soft 배경 위에서 4.5:1 을 통과한다.
+   ══════════════════════════════════════════════════════════════ */
+@media (prefers-contrast: more) {
+  :root:not([data-theme="dark"]) {
+    --sub:#5a5a60; --sub2:#76767a; --placeholder:#5f5f65;
+    --line:#8e8e93; --line-soft:#c6c6c8; --line-opaque:#8e8e93;
+    --link:#0057b0;
+    --up:#ca3329; --down:#006bd8;
+    --ok:#1c7e42; --warn:#916618; --danger:#b02a23; --info:#0c75a1;
+    --flat:#6e6e74; --axis:#6e6e74; --grid:rgba(0,0,0,.14);
+    --fill1:rgba(120,120,128,.34); --fill2:rgba(120,120,128,.28);
+    --fill3:rgba(118,118,128,.22); --fill4:rgba(116,116,128,.16);
+  }
+  :root[data-theme="dark"] {
+    --sub:#adadb4; --sub2:#83838a; --placeholder:#a4a4aa;
+    --line:#5a5a5e; --line-soft:#48484a; --line-opaque:#6c6c72;
+    --indigo:#7572ff; --link:#4aa8ff;
+    --axis:#83838a; --grid:rgba(255,255,255,.18);
+  }
+}
+@media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sub:#adadb4; --sub2:#83838a; --placeholder:#a4a4aa;
+    --line:#5a5a5e; --line-soft:#48484a; --line-opaque:#6c6c72;
+    --indigo:#7572ff; --link:#4aa8ff;
+    --axis:#83838a; --grid:rgba(255,255,255,.18);
+  }
+}
+
+/* 투명도 축소 — 머티리얼·글래스를 불투명 면으로 대체한다.
+   HIG: 재질의 외형은 시스템 설정에 따라 달라진다는 전제를 지킨다. */
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --mat:var(--card); --mat-ultrathin:var(--card);
+    --mat-thin:var(--card); --mat-thick:var(--card);
+    --glass:var(--card); --glass-clear:var(--card);
+    --mat-blur:none; --glass-blur:none;
+    --glass-line:var(--line);
+  }
+}
+
+/* ─── 기존 사이트 이름 별칭 (plan·speak 무수정 이관용) ─── */
 :root{
-  --bg:#F5F5F7; --card:#FFFFFF; --ink:#1D1D1F; --sub:#6E6E73; --line:#E3E3E6;
-  --accent:#2F6BFF; --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);
+  --fg:var(--ink); --muted:var(--sub); --accent:var(--brand);
+  --border:var(--line); --shadow:var(--sh);
+  --label:var(--ink); --label2:var(--sub); --label3:var(--sub2);
+  --sep:var(--line); --bg-elev:var(--card);
+}
+
+/* ─── 기본 리셋 ─── */
+*,*::before,*::after{ box-sizing:border-box }
+html{ -webkit-text-size-adjust:100% }
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:var(--fw-r) var(--fs-md)/var(--lh-base) var(--font);
+  letter-spacing:var(--tr-base);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+img,svg{ max-width:100%; display:block }
+:focus-visible{ outline:none; box-shadow:var(--ring); border-radius:var(--r-xs) }
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:.01ms !important; scroll-behavior:auto !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   기술 절(HIG Technologies 29쪽)에서 가져온 값 · 2026-09-02
+   근거는 HIG-COVERAGE.md 에 쪽 단위로 적어두었다.
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  /* 마크·배지 둘레 최소 여백 — 자기 높이의 1/10.
+     apple-pay · healthkit · augmented-reality 세 문서가 같은 값을 말한다. */
+  --clear:            .1em;
+
+  /* 버튼 세로 리듬 — 글자 크기는 버튼 높이의 43%, 뒤집으면 233%.
+     sign-in-with-apple 이 명시한 유일한 비율이다. */
+  --btn-ratio:        2.33;
+  --btn-min-w:        140px;   /* 글자 있는 버튼 최소 너비 */
+  --btn-pad-end:      8%;      /* 글자와 오른쪽 끝 사이 최소 여백 */
+
+  /* 유휴·저조도에서 낮추는 단계. 요소를 지우지 않고 이 값만 건다.
+     always-on: 레이아웃을 흔들면 고장으로 읽힌다. */
+  --dim-2:            .62;     /* 보조 글자·아이콘 */
+  --dim-3:            .38;     /* 넓은 색면·이미지 */
+
+  /* 사진·그러데이션 위에 얹는 글자. 단색 배경용 --ink 를 그대로 쓰지 않는다. */
+  --on-media:         #fff;
+  --on-media-2:       rgba(255,255,255,.76);
+  --on-media-scrim:   rgba(0,0,0,.28);
+
+  /* 추정값의 확신 단계. 숫자를 그대로 내보내지 않고 이 셋 중 하나로 말한다.
+     machine-learning: 낮은 구간은 아예 그리지 않는다. */
+  --conf-hi:          var(--ok);
+  --conf-mid:         var(--warn);
+  --conf-lo:          var(--flat);
+  --conf-cut:         .55;     /* 이 아래는 값을 렌더링하지 않는다 */
+
+  /* 차트 각주(출처·기준일) 여백. maps 의 귀속 표시 규격을 그대로 쓴다. */
+  --note-pad-x:       7px;
+  --note-pad-y:       10px;
+  --note-min-w:       200px;   /* 차트가 이보다 좁으면 각주를 생략한다 */
+  --note-min-h:       100px;
+}
+
+/* 카탈로그 전용 별칭 — 예전 이름을 토큰에 연결한다 */
+:root{ --accent:var(--brand); --shadow:var(--sh); }
   --imt-red:#E5484D;
   --imt-orange:#EF7C34;
   --imt-amber:#E3A13A;
@@ -18,20 +415,44 @@
   --imt-pink:#D4438C;
   --imt-slate:#5B6675;
   --imt-ink:#1C1C1E;
-}
-@media (prefers-color-scheme:dark){
-  :root{--bg:#000000;--card:#1C1C1E;--ink:#F5F5F7;--sub:#8E8E93;--line:#2C2C2E;
-        --shadow:0 1px 2px rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.4)}
-}
+
+/* ── 사이트 셸 — design.imaketoo.com 과 같은 2단 내비 ── */
+.gnav{position:sticky;top:0;z-index:var(--z-nav);height:48px;background:#1d1d1f;color:#f5f5f7;
+ display:flex;align-items:center;padding:0 var(--sp-5);gap:var(--sp-5);font-size:var(--fs-sm)}
+.gnav__b{display:flex;align-items:center;gap:7px;color:#f5f5f7;text-decoration:none;
+ font-weight:var(--fw-sb);letter-spacing:var(--tr-sm)}
+.gnav__b svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.9;
+ stroke-linecap:round;stroke-linejoin:round}
+.gnav a{color:#d1d1d6;text-decoration:none;white-space:nowrap}
+.gnav a:hover{color:#fff}
+.gnav__sp{margin-left:auto}
+.lnav{position:sticky;top:48px;z-index:calc(var(--z-nav) - 1);height:48px;display:flex;
+ align-items:center;gap:var(--sp-5);padding:0 var(--sp-5);background:var(--mat);
+ backdrop-filter:var(--mat-blur);-webkit-backdrop-filter:var(--mat-blur);
+ border-bottom:var(--hairline) solid var(--line)}
+.lnav__t{font:var(--fw-sb) var(--fs-xl)/1 var(--font);letter-spacing:var(--tr-xl);
+ color:var(--ink);text-decoration:none;white-space:nowrap}
+.lnav__i{display:flex;gap:var(--sp-4);margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.lnav__i::-webkit-scrollbar{display:none}
+.lnav__i a{position:relative;color:var(--sub);text-decoration:none;font-size:var(--fs-md);
+ line-height:48px;white-space:nowrap}
+.lnav__i a:hover{color:var(--ink)}
+.lnav__i a.on{color:var(--ink);font-weight:var(--fw-m)}
+.lnav__i a.on::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;
+ border-radius:2px 2px 0 0;background:var(--ink)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
  font:400 15px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Pretendard","Apple SD Gothic Neo",system-ui,sans-serif;
  -webkit-font-smoothing:antialiased}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px 96px}
-header{padding:64px 0 28px;text-align:center}
-h1{margin:0 0 8px;font-size:44px;line-height:1.08;letter-spacing:-.022em;font-weight:600}
-.lede{margin:0;color:var(--sub);font-size:17px;letter-spacing:-.01em}
-.bar{position:sticky;top:0;z-index:20;padding:14px 0 12px;background:color-mix(in srgb,var(--bg) 82%, transparent);
+.wrap{max-width:1024px;margin:0 auto;padding:0 var(--sp-5) var(--sp-16)}
+/* ── 머리말 — 가이드·랭귀지·토큰과 같은 모양 ── */
+.phead{padding:var(--sp-10) 0 var(--sp-6);max-width:74ch;text-align:left}
+.phead__k{margin:0 0 var(--sp-2);font:var(--fw-sb) var(--fs-tag)/1 var(--font);
+ letter-spacing:.10em;text-transform:uppercase;color:var(--sub2)}
+.phead h1{margin:0 0 var(--sp-3);font:var(--fw-sb) var(--fs-3xl)/1.12 var(--font);
+ letter-spacing:var(--tr-3xl);color:var(--ink)}
+.phead p{margin:0;font-size:var(--fs-lg);line-height:var(--lh-base);color:var(--sub)}
+.bar{position:sticky;top:96px;z-index:20;padding:14px 0 12px;background:color-mix(in srgb,var(--bg) 82%, transparent);
  backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .search{flex:1 1 280px;display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);
@@ -42,10 +463,29 @@ h1{margin:0 0 8px;font-size:44px;line-height:1.08;letter-spacing:-.022em;font-we
 .seg button{border:0;background:transparent;color:var(--sub);font:inherit;font-size:13px;font-weight:500;
  padding:7px 14px;border-radius:9px;cursor:pointer;letter-spacing:-.01em}
 .seg button[aria-pressed=true]{background:var(--accent);color:#fff}
-.chips{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 0;max-height:96px;overflow-y:auto}
-.chip{border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;
- padding:5px 11px;font-size:12.5px;font-weight:500;cursor:pointer;letter-spacing:-.01em;white-space:nowrap}
-.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ── 왼쪽 목록 — 가이드·랭귀지·토큰과 같은 배치 ── */
+.cols{display:grid;grid-template-columns:212px 1fr;gap:var(--sp-8);align-items:start}
+.side{position:sticky;top:112px;align-self:start;display:flex;flex-direction:column;gap:1px;
+ max-height:calc(100vh - 140px);overflow-y:auto;padding-bottom:var(--sp-6);scrollbar-width:thin}
+.side b{display:block;margin:var(--sp-4) 0 var(--sp-1);padding:0 var(--sp-3);
+ font:var(--fw-sb) var(--fs-xs)/1.6 var(--font);color:var(--sub2);
+ text-transform:uppercase;letter-spacing:.06em}
+.side b:first-child{margin-top:0}
+.chip{display:flex;align-items:center;justify-content:space-between;gap:8px;
+ border:0;background:transparent;color:var(--sub);border-radius:var(--r-in);
+ padding:6px var(--sp-3);font:var(--fw-r) var(--fs-md)/1.4 var(--font);cursor:pointer;
+ text-align:left;width:100%}
+.chip:hover{color:var(--ink);background:var(--fill4)}
+.chip[aria-pressed=true]{background:var(--fill3);color:var(--ink);font-weight:var(--fw-m)}
+.chip i{font-style:normal;font:var(--fw-r) var(--fs-tag)/1 var(--font-num);color:var(--sub2)}
+.chip[aria-pressed=true] i{color:var(--sub)}
+@media(max-width:820px){.cols{grid-template-columns:1fr}
+ .side{position:static;max-height:none;flex-direction:row;flex-wrap:wrap;gap:6px;
+  margin-bottom:var(--sp-4)}
+ .side b{display:none}
+ .chip{width:auto;border-radius:var(--r-cap);background:var(--card);box-shadow:var(--edge);
+  padding:5px 11px;font-size:var(--fs-sm)}
+ .chip i{display:none}}
 .count{color:var(--sub);font-size:13px;margin:20px 0 10px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px}
 .cell{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 8px 11px;text-align:center;
@@ -76,9 +516,31 @@ dialog::backdrop{background:rgba(0,0,0,.36);backdrop-filter:blur(3px)}
 .close{position:absolute;top:16px;right:18px;border:0;background:transparent;color:var(--sub);font-size:22px;cursor:pointer;line-height:1}
 footer{color:var(--sub);font-size:12.5px;text-align:center;margin-top:52px;line-height:1.8}
 </style></head><body>
+<nav class="gnav">
+  <a class="gnav__b" href="https://design.imaketoo.com/index.html">
+   <svg viewBox="0 0 24 24"><path d="M12 3.8l8 4.2-8 4.2-8-4.2z"/><path d="M4.4 12.6L12 16.6l7.6-4"/><path d="M4.4 16.8L12 20.8l7.6-4"/></svg>IMT Design</a>
+  <span class="gnav__sp"></span>
+  <a href="https://design.imaketoo.com/guide/index.html">가이드</a>
+  <a href="https://github.com/imaketoo-david/imt-icons">GitHub</a>
+</nav>
+<nav class="lnav">
+  <a class="lnav__t" href="https://design.imaketoo.com/index.html">디자인 시스템</a>
+  <div class="lnav__i">
+    <a href="https://design.imaketoo.com/index.html">개요</a>
+    <a href="https://design.imaketoo.com/guide/index.html">가이드</a>
+    <a href="https://design.imaketoo.com/language.html">랭귀지</a>
+    <a href="https://design.imaketoo.com/index-full.html">토큰</a>
+    <a href="catalog.html" class="on">아이콘</a>
+    <a href="https://design.imaketoo.com/resources.html">리소스</a>
+  </div>
+</nav>
 <div class="wrap">
-<header><h1>IMT Icons</h1>
-<p class="lede">334종 · 24 그리드 · 스트로크 1.6 · 아이콘을 눌러 복사하세요</p></header>
+<header class="phead">
+  <p class="phead__k">IMT ICONS</p>
+  <h1>아이콘</h1>
+  <p>24 그리드 위에 좌표로 직접 그린 334종. 굵기 9단·크기 3단이 CSS 변수 두 개로 움직인다.
+     아이콘을 누르면 코드가 복사된다.</p>
+</header>
 
 <div class="bar">
  <div class="row">
@@ -86,11 +548,15 @@ footer{color:var(--sub);font-size:12.5px;text-align:center;margin-top:52px;line-
    <input id="q" type="search" placeholder="이름 · 한글 키워드로 검색 (예: 차트, 알림, chart)" autocomplete="off"></label>
   <div class="seg"><button id="mGlyph" aria-pressed="true">글리프</button><button id="mBadge" aria-pressed="false">배지</button></div>
  </div>
- <div class="chips" id="chips"></div>
 </div>
 
-<p class="count" id="count"></p>
-<div class="grid" id="grid"></div>
+<div class="cols">
+  <aside class="side" id="chips"></aside>
+  <div>
+    <p class="count" id="count"></p>
+    <div class="grid" id="grid"></div>
+  </div>
+</div>
 
 <footer>IMT Icons v1.0 · imaketoo icon system<br>새 아이콘은 <code>src/icondata.py</code> 에 추가 후 빌드 스크립트를 다시 실행하세요.</footer>
 </div>
@@ -129,11 +595,13 @@ function badgeSVG(n,size){
 }
 
 const chips=document.getElementById("chips");
-chips.innerHTML = `<button class="chip" data-c="all" aria-pressed="true">전체</button>`
- + Object.entries(CATS).map(([k,v])=>`<button class="chip" data-c="${k}" aria-pressed="false">${v}</button>`).join("");
+const cnt = {}; names.forEach(n => cnt[DATA[n].c] = (cnt[DATA[n].c]||0) + 1);
+chips.innerHTML = `<b>분류</b><button class="chip" data-c="all" aria-pressed="true">전체<i>${names.length}</i></button>`
+ + Object.entries(CATS).filter(([k])=>cnt[k])
+    .map(([k,v])=>`<button class="chip" data-c="${k}" aria-pressed="false">${v}<i>${cnt[k]}</i></button>`).join("");
 chips.onclick=e=>{const b=e.target.closest(".chip"); if(!b)return;
- cat=b.dataset.c; [...chips.children].forEach(c=>c.setAttribute("aria-pressed", c===b));
- render()};
+ cat=b.dataset.c; [...chips.querySelectorAll(".chip")].forEach(c=>c.setAttribute("aria-pressed", c===b));
+ render();};
 
 const q=document.getElementById("q"); q.oninput=render;
 mGlyph.onclick=()=>{mode="glyph";mGlyph.setAttribute("aria-pressed","true");mBadge.setAttribute("aria-pressed","false");render()};
