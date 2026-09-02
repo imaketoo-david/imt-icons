@@ -25,8 +25,10 @@ HTML = """<!doctype html>
 <style>
 __TOKENS__
 /* 카탈로그 전용 별칭 — 예전 이름을 토큰에 연결한다 */
-:root{ --accent:var(--brand); --shadow:var(--sh); }
+:root{
+  --accent:var(--brand); --shadow:var(--sh);
 __PAL__
+}
 
 /* ── 사이트 셸 — design.imaketoo.com 과 같은 2단 내비 ── */
 .gnav{position:sticky;top:0;z-index:var(--z-nav);height:48px;background:#1d1d1f;color:#f5f5f7;

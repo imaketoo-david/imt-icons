@@ -23,4 +23,5 @@ python3 src/build_svg.py
 python3 src/build_font.py
 python3 src/build_code.py
 python3 src/build_catalog.py
+python3 src/check_css.py || exit 1
 echo "✅ IMT Icons 빌드 완료"
