@@ -10,6 +10,17 @@ SITE="https://icons.imaketoo.com"
 echo "▸ 1. 빌드"
 ./build.sh | tail -4
 
+# design 쪽으로 나가는 링크에 버전을 붙인다 — 브라우저 캐시가 옛 쪽을 붙들지 못하게 (L-0.5)
+python3 - <<'PYX'
+import re, datetime
+v = datetime.datetime.now().strftime("%Y%m%d-%H%M")
+s = open("catalog.html", encoding="utf-8").read()
+s = re.sub(r'https://design\.imaketoo\.com(/[A-Za-z0-9._/-]*)?(?:\?v=[^"\']*)?(?=["\'])',
+           lambda m: f'https://design.imaketoo.com{m.group(1) or "/index.html"}?v={v}', s)
+open("catalog.html", "w", encoding="utf-8").write(s)
+print(f"  링크 버전 스탬프 v={v}")
+PYX
+
 echo "▸ 2. 커밋·푸시"
 if [[ -n "$(git status --porcelain)" ]]; then
   git add -A
