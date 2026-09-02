@@ -40,6 +40,9 @@ __PAL__
 .gnav a{color:#d1d1d6;text-decoration:none;white-space:nowrap}
 .gnav a:hover{color:#fff}
 .gnav__sp{margin-left:auto}
+.gnav__t{background:rgba(255,255,255,.14);color:#f5f5f7;border:0;border-radius:var(--r-cap);
+ height:26px;padding:0 12px;font:var(--fw-m) var(--fs-sm) var(--font);cursor:pointer}
+.gnav__t:hover{background:rgba(255,255,255,.22)}
 .lnav{position:sticky;top:48px;z-index:calc(var(--z-nav) - 1);height:48px;display:flex;
  align-items:center;gap:var(--sp-5);padding:0 var(--sp-5);background:var(--mat);
  backdrop-filter:var(--mat-blur);-webkit-backdrop-filter:var(--mat-blur);
@@ -136,6 +139,7 @@ footer{color:var(--sub);font-size:12.5px;text-align:center;margin-top:52px;line-
   <span class="gnav__sp"></span>
   <a href="https://design.imaketoo.com/guide/index.html">가이드</a>
   <a href="https://github.com/imaketoo-david/imt-icons">GitHub</a>
+  <button class="gnav__t" id="theme">다크</button>
 </nav>
 <nav class="lnav">
   <a class="lnav__t" href="https://design.imaketoo.com/index.html">디자인 시스템</a>
@@ -183,6 +187,17 @@ footer{color:var(--sub);font-size:12.5px;text-align:center;margin-top:52px;line-
 
 <div class="toast" id="toast"></div>
 
+<script>
+(function(){
+  var T=document.getElementById("theme");
+  function ap(d){document.documentElement.setAttribute("data-theme",d?"dark":"light");
+                 T.textContent=d?"라이트":"다크";}
+  var d=matchMedia("(prefers-color-scheme: dark)").matches;
+  try{var v=localStorage.getItem("imt-theme"); if(v) d=v==="dark";}catch(e){}
+  ap(d);
+  T.onclick=function(){d=!d;ap(d);try{localStorage.setItem("imt-theme",d?"dark":"light")}catch(e){}};
+})();
+</script>
 <script>
 const DATA = __DATA__, CATS = __CATS__, PALETTE = __PALETTE__, SW = __SW__;
 const SQ = "__SQ__", RATIO = 0.52;
