@@ -68,11 +68,26 @@ body{margin:0;background:var(--bg);color:var(--ink);
 .wrap{max-width:1024px;margin:0 auto;padding:0 var(--sp-5) var(--sp-16)}
 /* ── 머리말 — 가이드·랭귀지·토큰과 같은 모양 ── */
 .phead{padding:var(--sp-10) 0 var(--sp-6);max-width:74ch;text-align:left}
-.phead__k{margin:0 0 var(--sp-2);font:var(--fw-sb) var(--fs-tag)/1 var(--font);
- letter-spacing:.10em;text-transform:uppercase;color:var(--sub2)}
+.phead .phead__k{display:flex;align-items:center;gap:var(--sp-2);
+ margin:0 0 var(--sp-3);font:var(--fw-sb) var(--fs-sm)/1 var(--font);
+ letter-spacing:.04em;color:var(--sub2);text-transform:none}
+.phead .phead__k .n{font-variant-numeric:tabular-nums;letter-spacing:.1em}
+.phead .phead__k .n::after{content:"";display:inline-block;vertical-align:middle;
+ width:20px;height:1px;margin:0 var(--sp-1) 0 var(--sp-2);background:var(--line)}
 .phead h1{margin:0 0 var(--sp-3);font:var(--fw-sb) var(--fs-3xl)/1.12 var(--font);
  letter-spacing:var(--tr-3xl);color:var(--ink)}
 .phead p{margin:0;font-size:var(--fs-lg);line-height:var(--lh-base);color:var(--sub)}
+.phead--top{max-width:none;padding:var(--sp-16) 0 var(--sp-8);
+ border-bottom:var(--hairline) solid var(--line-soft)}
+.phead--top h1{margin-bottom:var(--sp-5);font-size:var(--fs-hero);line-height:1.06;
+ letter-spacing:var(--tr-3xl)}
+.phead--top>p:not(.phead__k):not(.phead__m){max-width:60ch;font-size:var(--fs-xl);
+ line-height:1.5;color:var(--sub)}
+.phead--top .phead__m{margin:var(--sp-6) 0 0;display:flex;flex-wrap:wrap;
+ gap:var(--sp-1) var(--sp-4);font:var(--fw-m) var(--fs-sm)/1.4 var(--font);
+ letter-spacing:.02em;color:var(--sub2)}
+@media(max-width:900px){.phead--top{padding:var(--sp-10) 0 var(--sp-6)}
+ .phead--top>p:not(.phead__k):not(.phead__m){font-size:var(--fs-lg)}}
 .bar{position:sticky;top:96px;z-index:20;padding:14px 0 12px;background:color-mix(in srgb,var(--bg) 82%, transparent);
  backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
@@ -153,11 +168,12 @@ footer{color:var(--sub);font-size:12.5px;text-align:center;margin-top:52px;line-
   <button class="gnav__t" id="theme">다크</button>
 </nav>
 <div class="wrap">
-<header class="phead">
-  <p class="phead__k">IMT ICONS</p>
-  <h1>아이콘</h1>
-  <p>24 그리드 위에 좌표로 직접 그린 __N__종. 굵기 9단·크기 3단이 CSS 변수 두 개로 움직인다.
+<header class="phead phead--top">
+  <p class="phead__k"><span class="n">04</span>아이콘</p>
+  <h1>좌표로 그린 __N__종</h1>
+  <p>24 그리드 위에 하나씩 직접 그렸다. 굵기 9단·크기 3단이 CSS 변수 두 개로 움직인다.
      아이콘을 누르면 코드가 복사된다.</p>
+  <p class="phead__m"><span>24 그리드</span><span>굵기 9단 · 크기 3단</span><span>눌러서 복사</span></p>
 </header>
 
 <div class="bar">
