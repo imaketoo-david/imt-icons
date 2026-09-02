@@ -5,7 +5,7 @@
 |---|---|
 | GitHub | https://github.com/imaketoo-david/imt-icons (public, tag `v3.0.0`) |
 | jsDelivr CDN | `https://cdn.jsdelivr.net/gh/imaketoo-david/imt-icons@3/...` ✅ |
-| 자체 호스팅 | https://icons.imaketoo.com ✅ |
+| 자체 호스팅 | https://design.imaketoo.com/icons ✅ (2026-09-03 통합 · 옛 icons.imaketoo.com 은 301) |
 | 맥미니 파일 | `/Users/songsmac-mini/Documents/Project/imt-icons` |
 
 ## 1. GitHub 갱신
@@ -48,13 +48,13 @@ DNS: `cloudflared tunnel route dns 8c6f4998-... icons.imaketoo.com` (CNAME 생�
 
 웹폰트 예시:
 ```html
-<link rel="stylesheet" href="https://icons.imaketoo.com/font/imt-icons.css">
+<link rel="stylesheet" href="https://design.imaketoo.com/icons/font/imt-icons.css">
 <i class="imt imt-chart-line"></i>
 ```
 
 ## 5. 검증 명령
 ```bash
 for p in /catalog.html /sprite.svg /icons.json /font/imt-icons.woff2 /icons/glyph/chart-line.svg; do
-  printf "%-34s " "$p"; curl -s -o /dev/null -w "%{http_code}\n" "https://icons.imaketoo.com$p"
+  printf "%-34s " "$p"; curl -s -o /dev/null -w "%{http_code}\n" "https://design.imaketoo.com/icons$p"
 done
 ```

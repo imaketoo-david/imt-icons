@@ -134,7 +134,11 @@
   --r-in:    13px;
   --r-xs:    6px;
   --r-sheet: 22px;
-  --r-cap:   999px;  /* 캡슐 — 애플 현행 버튼 기본형(텍스트/텍스트+아이콘) */
+  --r-cap:   999px;
+  /* 앱 아이콘 정사각의 코너 — 애플이 쓰는 연속곡률 비율(변의 22.4%)이다.
+     고정 px 가 아니라 비율이라 크기를 바꿔도 모양이 유지된다.
+     정사각형에만 쓴다. 직사각형에 걸면 코너가 타원이 된다. */
+  --r-app:   22.4%;  /* 캡슐 — 애플 현행 버튼 기본형(텍스트/텍스트+아이콘) */
   --r-xl: var(--r); --r-lg: var(--r); --r-md: var(--r); --r-sm: var(--r);
 
   /* ─── 컨트롤 크기 ────────────────────────────────────────────
@@ -526,22 +530,22 @@ dialog::backdrop{background:rgba(0,0,0,.36);backdrop-filter:blur(3px)}
 footer{color:var(--sub);font-size:12.5px;text-align:center;margin-top:52px;line-height:1.8}
 </style></head><body>
 <nav class="gnav">
-  <a class="gnav__b" href="https://design.imaketoo.com/index.html?v=20260902-2221">
+  <a class="gnav__b" href="https://design.imaketoo.com/index.html?v=20260903-0623">
    <svg viewBox="0 0 24 24"><path d="M12 3.8l8 4.2-8 4.2-8-4.2z"/><path d="M4.4 12.6L12 16.6l7.6-4"/><path d="M4.4 16.8L12 20.8l7.6-4"/></svg>IMT Design</a>
   <span class="gnav__sp"></span>
-  <a href="https://design.imaketoo.com/guide/index.html?v=20260902-2221">가이드</a>
+  <a href="https://design.imaketoo.com/guide/index.html?v=20260903-0623">가이드</a>
   <a href="https://github.com/imaketoo-david/imt-icons">GitHub</a>
   <button class="gnav__t" id="theme">다크</button>
 </nav>
 <nav class="lnav">
-  <a class="lnav__t" href="https://design.imaketoo.com/index.html?v=20260902-2221">디자인 시스템</a>
+  <a class="lnav__t" href="https://design.imaketoo.com/index.html?v=20260903-0623">디자인 시스템</a>
   <div class="lnav__i">
-    <a href="https://design.imaketoo.com/index.html?v=20260902-2221">개요</a>
-    <a href="https://design.imaketoo.com/guide/index.html?v=20260902-2221">가이드</a>
-    <a href="https://design.imaketoo.com/language.html?v=20260902-2221">랭귀지</a>
-    <a href="https://design.imaketoo.com/index-full.html?v=20260902-2221">토큰</a>
+    <a href="https://design.imaketoo.com/index.html?v=20260903-0623">개요</a>
+    <a href="https://design.imaketoo.com/guide/index.html?v=20260903-0623">가이드</a>
+    <a href="https://design.imaketoo.com/language.html?v=20260903-0623">랭귀지</a>
+    <a href="https://design.imaketoo.com/index-full.html?v=20260903-0623">토큰</a>
     <a href="catalog.html" class="on">아이콘</a>
-    <a href="https://design.imaketoo.com/resources.html?v=20260902-2221">리소스</a>
+    <a href="https://design.imaketoo.com/resources.html?v=20260903-0623">리소스</a>
   </div>
 </nav>
 <div class="wrap">

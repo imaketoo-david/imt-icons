@@ -5,7 +5,9 @@ set -euo pipefail
 cd "$(dirname "$0")"
 HOST="${IMT_HOST:-mini-ts}"
 DEST="/Users/songsmac-mini/Documents/Project/imt-icons/"
-SITE="https://icons.imaketoo.com"
+# 2026-09-03: design.imaketoo.com/icons/ 로 통합. 폴더와 rsync 목적지는 그대로다
+# — Caddy 가 그 폴더를 /icons/ 아래로 붙여 준다(handle_path).
+SITE="https://design.imaketoo.com/icons"
 
 echo "▸ 1. 빌드"
 ./build.sh | tail -4
