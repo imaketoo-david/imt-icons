@@ -1,0 +1,7 @@
+{
+ "name": "imt-icons",
+ "version": "3.0.0",
+ "description": "imaketoo icon system — 324 icons, 37 categories, 24 grid, stroke 1.6",
+ "main": "react/IMTIcon.jsx",
+ "private": true
+}

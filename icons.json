@@ -1,0 +1,2002 @@
+{
+ "icons": [
+  {
+   "name": "accessibility",
+   "cat": "a11y",
+   "kw": "접근성 손쉬운사용 accessibility a11y",
+   "hue": "blue"
+  },
+  {
+   "name": "activity-ring",
+   "cat": "fitness",
+   "kw": "활동링 운동목표 activity ring goal",
+   "hue": "green"
+  },
+  {
+   "name": "airplay",
+   "cat": "connect",
+   "kw": "에어플레이 미러링 airplay cast",
+   "hue": "slate"
+  },
+  {
+   "name": "alarm",
+   "cat": "time",
+   "kw": "알람 기상 알림시계 alarm",
+   "hue": "red"
+  },
+  {
+   "name": "align-center",
+   "cat": "text",
+   "kw": "가운데정렬 중앙 align center",
+   "hue": "slate"
+  },
+  {
+   "name": "align-justify",
+   "cat": "text",
+   "kw": "양쪽정렬 저스티파이 justify",
+   "hue": "slate"
+  },
+  {
+   "name": "align-left",
+   "cat": "text",
+   "kw": "왼쪽정렬 좌측 align left",
+   "hue": "slate"
+  },
+  {
+   "name": "align-right",
+   "cat": "text",
+   "kw": "오른쪽정렬 우측 align right",
+   "hue": "slate"
+  },
+  {
+   "name": "angle",
+   "cat": "math",
+   "kw": "각도 앵글 기하 angle geometry",
+   "hue": "slate"
+  },
+  {
+   "name": "antenna",
+   "cat": "connect",
+   "kw": "안테나 기지국 송수신 antenna tower",
+   "hue": "indigo"
+  },
+  {
+   "name": "archive",
+   "cat": "files",
+   "kw": "보관 아카이브 박스 archive storage",
+   "hue": "orange"
+  },
+  {
+   "name": "arrow-down",
+   "cat": "arrows",
+   "kw": "아래 화살표 하강 down arrow",
+   "hue": "slate"
+  },
+  {
+   "name": "arrow-left",
+   "cat": "arrows",
+   "kw": "왼쪽 화살표 뒤로 left back",
+   "hue": "slate"
+  },
+  {
+   "name": "arrow-right",
+   "cat": "arrows",
+   "kw": "오른쪽 화살표 앞으로 right forward",
+   "hue": "slate"
+  },
+  {
+   "name": "arrow-up",
+   "cat": "arrows",
+   "kw": "위 화살표 상승 up arrow",
+   "hue": "slate"
+  },
+  {
+   "name": "arrow-up-right",
+   "cat": "arrows",
+   "kw": "외부링크 이동 대각선 external link",
+   "hue": "slate"
+  },
+  {
+   "name": "asterisk",
+   "cat": "symbols",
+   "kw": "별표 애스터리스크 asterisk",
+   "hue": "slate"
+  },
+  {
+   "name": "at",
+   "cat": "symbols",
+   "kw": "골뱅이 이메일 계정 at mention",
+   "hue": "blue"
+  },
+  {
+   "name": "avatar",
+   "cat": "people",
+   "kw": "아바타 프로필사진 avatar profile",
+   "hue": "blue"
+  },
+  {
+   "name": "bag",
+   "cat": "commerce",
+   "kw": "쇼핑백 구매 bag shop",
+   "hue": "pink"
+  },
+  {
+   "name": "bank",
+   "cat": "finance",
+   "kw": "은행 증권사 기관 bank institution",
+   "hue": "indigo"
+  },
+  {
+   "name": "barcode",
+   "cat": "symbols",
+   "kw": "바코드 스캔 barcode scan",
+   "hue": "slate"
+  },
+  {
+   "name": "basket",
+   "cat": "commerce",
+   "kw": "바구니 담기 basket",
+   "hue": "green"
+  },
+  {
+   "name": "bath",
+   "cat": "home",
+   "kw": "욕조 욕실 목욕 bath bathroom",
+   "hue": "cyan"
+  },
+  {
+   "name": "battery",
+   "cat": "tools",
+   "kw": "배터리 전원 잔량 battery power",
+   "hue": "green"
+  },
+  {
+   "name": "bed",
+   "cat": "home",
+   "kw": "침대 수면 침실 bed sleep",
+   "hue": "indigo"
+  },
+  {
+   "name": "bell",
+   "cat": "comms",
+   "kw": "알림 벨 소식 notification bell alert",
+   "hue": "amber"
+  },
+  {
+   "name": "bicycle",
+   "cat": "transport",
+   "kw": "자전거 이동 bike bicycle",
+   "hue": "green"
+  },
+  {
+   "name": "bitcoin",
+   "cat": "indices",
+   "kw": "비트코인 암호화폐 btc crypto",
+   "hue": "orange"
+  },
+  {
+   "name": "bold",
+   "cat": "text",
+   "kw": "굵게 볼드 강조 bold",
+   "hue": "ink"
+  },
+  {
+   "name": "bolt",
+   "cat": "nature",
+   "kw": "번개 전력 빠름 bolt power fast",
+   "hue": "amber"
+  },
+  {
+   "name": "book",
+   "cat": "objects",
+   "kw": "책 문서 매뉴얼 book manual",
+   "hue": "indigo"
+  },
+  {
+   "name": "book-open",
+   "cat": "objects",
+   "kw": "펼친책 학습 읽기 reading learn",
+   "hue": "indigo"
+  },
+  {
+   "name": "bookmark",
+   "cat": "objects",
+   "kw": "북마크 저장 스크랩 bookmark save",
+   "hue": "pink"
+  },
+  {
+   "name": "box",
+   "cat": "objects",
+   "kw": "상자 박스 패키지 box package",
+   "hue": "orange"
+  },
+  {
+   "name": "braces",
+   "cat": "dev",
+   "kw": "중괄호 API 스키마 braces api schema",
+   "hue": "slate"
+  },
+  {
+   "name": "branch",
+   "cat": "dev",
+   "kw": "브랜치 깃 버전 branch git version",
+   "hue": "purple"
+  },
+  {
+   "name": "brightness",
+   "cat": "keyboard",
+   "kw": "밝기 화면 조절 brightness display",
+   "hue": "amber"
+  },
+  {
+   "name": "broadcast",
+   "cat": "symbols",
+   "kw": "방송 송출 신호 broadcast signal",
+   "hue": "cyan"
+  },
+  {
+   "name": "brush",
+   "cat": "edit",
+   "kw": "브러시 색칠 붓 brush paint",
+   "hue": "orange"
+  },
+  {
+   "name": "bulb",
+   "cat": "home",
+   "kw": "전구 조명 아이디어 bulb light idea",
+   "hue": "amber"
+  },
+  {
+   "name": "bus",
+   "cat": "transport",
+   "kw": "버스 대중교통 bus transit",
+   "hue": "green"
+  },
+  {
+   "name": "calculator",
+   "cat": "objects",
+   "kw": "계산기 연산 calculator compute",
+   "hue": "slate"
+  },
+  {
+   "name": "calendar",
+   "cat": "time",
+   "kw": "달력 일정 날짜 calendar schedule date",
+   "hue": "red"
+  },
+  {
+   "name": "camera",
+   "cat": "camera",
+   "kw": "카메라 촬영 사진 camera capture",
+   "hue": "slate"
+  },
+  {
+   "name": "capsule",
+   "cat": "shapes",
+   "kw": "캡슐 알약 필 capsule pill",
+   "hue": "slate"
+  },
+  {
+   "name": "captions",
+   "cat": "a11y",
+   "kw": "자막 캡션 subtitle captions",
+   "hue": "slate"
+  },
+  {
+   "name": "car",
+   "cat": "transport",
+   "kw": "자동차 차량 승용차 car vehicle",
+   "hue": "slate"
+  },
+  {
+   "name": "card",
+   "cat": "commerce",
+   "kw": "카드 결제 신용카드 card payment",
+   "hue": "blue"
+  },
+  {
+   "name": "cart",
+   "cat": "commerce",
+   "kw": "장바구니 카트 쇼핑 cart shopping",
+   "hue": "green"
+  },
+  {
+   "name": "chart-area",
+   "cat": "data",
+   "kw": "영역그래프 누적 area chart",
+   "hue": "teal"
+  },
+  {
+   "name": "chart-bar",
+   "cat": "data",
+   "kw": "막대그래프 통계 차트 bar chart stats",
+   "hue": "blue"
+  },
+  {
+   "name": "chart-candle",
+   "cat": "finance",
+   "kw": "캔들차트 주가 시세 candle stock",
+   "hue": "red"
+  },
+  {
+   "name": "chart-line",
+   "cat": "data",
+   "kw": "선그래프 추이 차트 line chart trend",
+   "hue": "cyan"
+  },
+  {
+   "name": "chart-pie",
+   "cat": "data",
+   "kw": "파이차트 비중 구성 pie chart share",
+   "hue": "purple"
+  },
+  {
+   "name": "chat",
+   "cat": "comms",
+   "kw": "채팅 대화 말풍선 chat bubble",
+   "hue": "green"
+  },
+  {
+   "name": "chat-lines",
+   "cat": "comms",
+   "kw": "메시지 댓글 내용 message comment",
+   "hue": "green"
+  },
+  {
+   "name": "check",
+   "cat": "core",
+   "kw": "확인 완료 체크 done complete",
+   "hue": "green"
+  },
+  {
+   "name": "chevron-down",
+   "cat": "arrows",
+   "kw": "아래 펼치기 드롭다운 chevron down",
+   "hue": "slate"
+  },
+  {
+   "name": "chevron-left",
+   "cat": "arrows",
+   "kw": "이전 뒤로 chevron left prev",
+   "hue": "slate"
+  },
+  {
+   "name": "chevron-right",
+   "cat": "arrows",
+   "kw": "다음 이동 chevron right next",
+   "hue": "slate"
+  },
+  {
+   "name": "chevron-up",
+   "cat": "arrows",
+   "kw": "위 펼치기 접기 chevron up",
+   "hue": "slate"
+  },
+  {
+   "name": "circle",
+   "cat": "shapes",
+   "kw": "원 동그라미 circle",
+   "hue": "slate"
+  },
+  {
+   "name": "clipboard-health",
+   "cat": "health",
+   "kw": "검진표 차트 기록 chart record",
+   "hue": "teal"
+  },
+  {
+   "name": "clock",
+   "cat": "time",
+   "kw": "시간 시계 대기 time clock pending",
+   "hue": "slate"
+  },
+  {
+   "name": "close",
+   "cat": "core",
+   "kw": "닫기 취소 곱하기 close cancel",
+   "hue": "slate"
+  },
+  {
+   "name": "cloud",
+   "cat": "connect",
+   "kw": "클라우드 서버 cloud",
+   "hue": "cyan"
+  },
+  {
+   "name": "cloud-bolt",
+   "cat": "weather",
+   "kw": "뇌우 천둥 thunderstorm",
+   "hue": "purple"
+  },
+  {
+   "name": "cloud-rain",
+   "cat": "weather",
+   "kw": "비 강수 우천 rain",
+   "hue": "blue"
+  },
+  {
+   "name": "cloud-snow",
+   "cat": "weather",
+   "kw": "눈 강설 snow",
+   "hue": "cyan"
+  },
+  {
+   "name": "cloud-sun",
+   "cat": "weather",
+   "kw": "구름조금 부분맑음 partly cloudy",
+   "hue": "amber"
+  },
+  {
+   "name": "cloud-upload",
+   "cat": "connect",
+   "kw": "클라우드 업로드 동기화 cloud upload sync",
+   "hue": "cyan"
+  },
+  {
+   "name": "code",
+   "cat": "dev",
+   "kw": "코드 개발 프로그래밍 code develop",
+   "hue": "indigo"
+  },
+  {
+   "name": "coin",
+   "cat": "commerce",
+   "kw": "원화 돈 코인 금액 won money coin",
+   "hue": "amber"
+  },
+  {
+   "name": "collapse",
+   "cat": "arrows",
+   "kw": "축소 접기 collapse minimize",
+   "hue": "slate"
+  },
+  {
+   "name": "command",
+   "cat": "symbols",
+   "kw": "커맨드 단축키 command key",
+   "hue": "slate"
+  },
+  {
+   "name": "compare",
+   "cat": "finance",
+   "kw": "비교 교체 스왑 compare swap switch",
+   "hue": "purple"
+  },
+  {
+   "name": "compass",
+   "cat": "map",
+   "kw": "나침반 방향 탐색 compass explore",
+   "hue": "cyan"
+  },
+  {
+   "name": "compass-draw",
+   "cat": "math",
+   "kw": "제도 컴퍼스 작도 compass drafting",
+   "hue": "slate"
+  },
+  {
+   "name": "contact-book",
+   "cat": "people",
+   "kw": "연락처 주소록 contacts address",
+   "hue": "teal"
+  },
+  {
+   "name": "contrast",
+   "cat": "edit",
+   "kw": "대비 명암 contrast",
+   "hue": "slate"
+  },
+  {
+   "name": "copy",
+   "cat": "files",
+   "kw": "복사 사본 duplicate copy",
+   "hue": "slate"
+  },
+  {
+   "name": "crop",
+   "cat": "camera",
+   "kw": "자르기 크롭 crop trim",
+   "hue": "slate"
+  },
+  {
+   "name": "cup",
+   "cat": "objects",
+   "kw": "컵 커피 음료 cup coffee drink",
+   "hue": "orange"
+  },
+  {
+   "name": "dashboard",
+   "cat": "data",
+   "kw": "대시보드 요약 그리드 dashboard overview",
+   "hue": "indigo"
+  },
+  {
+   "name": "database",
+   "cat": "dev",
+   "kw": "데이터베이스 DB 저장소 database storage",
+   "hue": "indigo"
+  },
+  {
+   "name": "delete-key",
+   "cat": "keyboard",
+   "kw": "삭제키 백스페이스 delete backspace",
+   "hue": "slate"
+  },
+  {
+   "name": "desktop",
+   "cat": "devices",
+   "kw": "데스크탑 모니터 컴퓨터 desktop monitor",
+   "hue": "slate"
+  },
+  {
+   "name": "diamond",
+   "cat": "shapes",
+   "kw": "마름모 다이아 diamond rhombus",
+   "hue": "slate"
+  },
+  {
+   "name": "dice",
+   "cat": "gaming",
+   "kw": "주사위 확률 랜덤 dice random",
+   "hue": "red"
+  },
+  {
+   "name": "divide",
+   "cat": "math",
+   "kw": "나누기 디바이드 divide",
+   "hue": "slate"
+  },
+  {
+   "name": "doc",
+   "cat": "files",
+   "kw": "문서 파일 리포트 document file report",
+   "hue": "slate"
+  },
+  {
+   "name": "doc-add",
+   "cat": "files",
+   "kw": "새문서 문서추가 new document",
+   "hue": "green"
+  },
+  {
+   "name": "dollar",
+   "cat": "indices",
+   "kw": "달러 USD 통화 dollar",
+   "hue": "green"
+  },
+  {
+   "name": "door",
+   "cat": "home",
+   "kw": "문 출입 도어 door entrance",
+   "hue": "orange"
+  },
+  {
+   "name": "dots-grid",
+   "cat": "symbols",
+   "kw": "앱 그리드 메뉴 apps grid",
+   "hue": "slate"
+  },
+  {
+   "name": "download",
+   "cat": "files",
+   "kw": "다운로드 내려받기 저장 download save",
+   "hue": "green"
+  },
+  {
+   "name": "drop",
+   "cat": "nature",
+   "kw": "물방울 수분 액체 drop water",
+   "hue": "cyan"
+  },
+  {
+   "name": "dumbbell",
+   "cat": "fitness",
+   "kw": "덤벨 운동 헬스 dumbbell workout",
+   "hue": "red"
+  },
+  {
+   "name": "ear",
+   "cat": "a11y",
+   "kw": "청각 듣기 소리 hearing ear",
+   "hue": "purple"
+  },
+  {
+   "name": "edit",
+   "cat": "edit",
+   "kw": "편집 수정 연필 edit write pencil",
+   "hue": "green"
+  },
+  {
+   "name": "engine",
+   "cat": "auto",
+   "kw": "엔진 정비 engine motor",
+   "hue": "slate"
+  },
+  {
+   "name": "equal",
+   "cat": "math",
+   "kw": "같음 등호 equal",
+   "hue": "slate"
+  },
+  {
+   "name": "equalizer",
+   "cat": "variables",
+   "kw": "이퀄라이저 조정 equalizer mixer",
+   "hue": "purple"
+  },
+  {
+   "name": "eraser",
+   "cat": "edit",
+   "kw": "지우개 삭제 erase",
+   "hue": "pink"
+  },
+  {
+   "name": "error",
+   "cat": "status",
+   "kw": "오류 실패 에러 error fail",
+   "hue": "red"
+  },
+  {
+   "name": "euro",
+   "cat": "indices",
+   "kw": "유로 EUR 통화 euro",
+   "hue": "blue"
+  },
+  {
+   "name": "expand",
+   "cat": "arrows",
+   "kw": "확대 전체화면 펼치기 expand fullscreen",
+   "hue": "slate"
+  },
+  {
+   "name": "exposure",
+   "cat": "camera",
+   "kw": "노출 밝기보정 exposure",
+   "hue": "slate"
+  },
+  {
+   "name": "eye",
+   "cat": "core",
+   "kw": "보기 미리보기 노출 view preview visible",
+   "hue": "cyan"
+  },
+  {
+   "name": "eye-off",
+   "cat": "security",
+   "kw": "숨김 비공개 hidden invisible",
+   "hue": "slate"
+  },
+  {
+   "name": "eyedropper",
+   "cat": "edit",
+   "kw": "스포이드 색추출 eyedropper color picker",
+   "hue": "purple"
+  },
+  {
+   "name": "fast-forward",
+   "cat": "media",
+   "kw": "빨리감기 다음 fast forward",
+   "hue": "slate"
+  },
+  {
+   "name": "film",
+   "cat": "camera",
+   "kw": "필름 영상소스 film strip",
+   "hue": "slate"
+  },
+  {
+   "name": "filter",
+   "cat": "core",
+   "kw": "필터 정렬 조건 filter sort",
+   "hue": "indigo"
+  },
+  {
+   "name": "fingerprint",
+   "cat": "security",
+   "kw": "지문 생체인증 fingerprint biometric",
+   "hue": "purple"
+  },
+  {
+   "name": "first-aid",
+   "cat": "health",
+   "kw": "구급상자 응급키트 first aid kit",
+   "hue": "red"
+  },
+  {
+   "name": "flag",
+   "cat": "map",
+   "kw": "깃발 목표 표시 flag goal mark",
+   "hue": "red"
+  },
+  {
+   "name": "flag-checker",
+   "cat": "gaming",
+   "kw": "체커기 결승 레이스 finish race",
+   "hue": "ink"
+  },
+  {
+   "name": "flame",
+   "cat": "nature",
+   "kw": "불꽃 화재 열 flame fire heat",
+   "hue": "orange"
+  },
+  {
+   "name": "flash-off",
+   "cat": "camera",
+   "kw": "플래시 끄기 flash off",
+   "hue": "amber"
+  },
+  {
+   "name": "flashlight",
+   "cat": "tools",
+   "kw": "손전등 조명 flashlight torch",
+   "hue": "amber"
+  },
+  {
+   "name": "flip",
+   "cat": "camera",
+   "kw": "반전 좌우대칭 flip mirror",
+   "hue": "slate"
+  },
+  {
+   "name": "fog",
+   "cat": "weather",
+   "kw": "안개 흐림 fog mist",
+   "hue": "slate"
+  },
+  {
+   "name": "folder",
+   "cat": "files",
+   "kw": "폴더 디렉터리 folder directory",
+   "hue": "amber"
+  },
+  {
+   "name": "folder-open",
+   "cat": "files",
+   "kw": "폴더열기 탐색 folder open browse",
+   "hue": "amber"
+  },
+  {
+   "name": "footsteps",
+   "cat": "fitness",
+   "kw": "걸음 발자국 보행수 steps walk",
+   "hue": "teal"
+  },
+  {
+   "name": "forward",
+   "cat": "arrows",
+   "kw": "전달 포워드 forward",
+   "hue": "blue"
+  },
+  {
+   "name": "fridge",
+   "cat": "home",
+   "kw": "냉장고 주방 fridge kitchen",
+   "hue": "slate"
+  },
+  {
+   "name": "fuel",
+   "cat": "auto",
+   "kw": "주유 기름 연료 fuel gas",
+   "hue": "red"
+  },
+  {
+   "name": "gamepad",
+   "cat": "gaming",
+   "kw": "게임패드 컨트롤러 game controller",
+   "hue": "purple"
+  },
+  {
+   "name": "gauge",
+   "cat": "variables",
+   "kw": "게이지 계측 수치 gauge meter",
+   "hue": "cyan"
+  },
+  {
+   "name": "gear",
+   "cat": "tools",
+   "kw": "설정 톱니 환경 settings gear config",
+   "hue": "slate"
+  },
+  {
+   "name": "gift",
+   "cat": "commerce",
+   "kw": "선물 혜택 기프트 gift benefit",
+   "hue": "red"
+  },
+  {
+   "name": "git-commit",
+   "cat": "dev",
+   "kw": "커밋 변경이력 commit",
+   "hue": "orange"
+  },
+  {
+   "name": "globe",
+   "cat": "connect",
+   "kw": "웹 사이트 글로벌 web site global",
+   "hue": "blue"
+  },
+  {
+   "name": "hammer",
+   "cat": "tools",
+   "kw": "망치 수리 도구 hammer repair",
+   "hue": "orange"
+  },
+  {
+   "name": "hand",
+   "cat": "human",
+   "kw": "손 정지 터치 hand stop",
+   "hue": "amber"
+  },
+  {
+   "name": "hash",
+   "cat": "symbols",
+   "kw": "해시 샵 태그 hash tag",
+   "hue": "slate"
+  },
+  {
+   "name": "headphones",
+   "cat": "devices",
+   "kw": "헤드폰 이어폰 headphones",
+   "hue": "slate"
+  },
+  {
+   "name": "heart",
+   "cat": "health",
+   "kw": "하트 좋아요 건강 heart like",
+   "hue": "red"
+  },
+  {
+   "name": "hexagon",
+   "cat": "shapes",
+   "kw": "육각형 도형 hexagon",
+   "hue": "slate"
+  },
+  {
+   "name": "history",
+   "cat": "time",
+   "kw": "기록 이력 되돌리기 history undo",
+   "hue": "cyan"
+  },
+  {
+   "name": "home",
+   "cat": "home",
+   "kw": "홈 집 메인 home house main",
+   "hue": "blue"
+  },
+  {
+   "name": "hourglass",
+   "cat": "time",
+   "kw": "모래시계 마감 hourglass deadline",
+   "hue": "amber"
+  },
+  {
+   "name": "id-card",
+   "cat": "people",
+   "kw": "신분증 사원증 ID card badge",
+   "hue": "indigo"
+  },
+  {
+   "name": "inbox",
+   "cat": "comms",
+   "kw": "수신함 받은편지 inbox",
+   "hue": "slate"
+  },
+  {
+   "name": "indent",
+   "cat": "text",
+   "kw": "들여쓰기 인덴트 indent",
+   "hue": "slate"
+  },
+  {
+   "name": "infinity",
+   "cat": "math",
+   "kw": "무한 인피니티 infinity",
+   "hue": "slate"
+  },
+  {
+   "name": "info",
+   "cat": "status",
+   "kw": "정보 안내 도움말 info help about",
+   "hue": "blue"
+  },
+  {
+   "name": "italic",
+   "cat": "text",
+   "kw": "기울임 이탤릭 italic",
+   "hue": "ink"
+  },
+  {
+   "name": "joystick",
+   "cat": "gaming",
+   "kw": "조이스틱 조작 joystick control",
+   "hue": "indigo"
+  },
+  {
+   "name": "key",
+   "cat": "security",
+   "kw": "키 인증 보안키 key auth token",
+   "hue": "amber"
+  },
+  {
+   "name": "key-fob",
+   "cat": "auto",
+   "kw": "스마트키 리모컨 key fob remote",
+   "hue": "indigo"
+  },
+  {
+   "name": "keyboard",
+   "cat": "keyboard",
+   "kw": "키보드 입력 typing keyboard",
+   "hue": "slate"
+  },
+  {
+   "name": "lamp",
+   "cat": "home",
+   "kw": "스탠드 조명 램프 lamp light",
+   "hue": "amber"
+  },
+  {
+   "name": "laptop",
+   "cat": "devices",
+   "kw": "노트북 맥북 랩탑 laptop macbook",
+   "hue": "slate"
+  },
+  {
+   "name": "layers",
+   "cat": "symbols",
+   "kw": "레이어 계층 겹침 layers stack",
+   "hue": "indigo"
+  },
+  {
+   "name": "leaf",
+   "cat": "nature",
+   "kw": "잎 자연 친환경 leaf eco nature",
+   "hue": "green"
+  },
+  {
+   "name": "link",
+   "cat": "connect",
+   "kw": "링크 연결 url link connect",
+   "hue": "slate"
+  },
+  {
+   "name": "list-bullet",
+   "cat": "text",
+   "kw": "글머리표 목록 리스트 bullet list",
+   "hue": "slate"
+  },
+  {
+   "name": "list-check",
+   "cat": "text",
+   "kw": "체크리스트 할일 checklist todo",
+   "hue": "green"
+  },
+  {
+   "name": "location",
+   "cat": "map",
+   "kw": "현위치 좌표 crosshair location",
+   "hue": "blue"
+  },
+  {
+   "name": "lock",
+   "cat": "security",
+   "kw": "잠금 보안 비공개 lock secure private",
+   "hue": "indigo"
+  },
+  {
+   "name": "magic-wand",
+   "cat": "edit",
+   "kw": "자동보정 마술봉 magic wand auto",
+   "hue": "purple"
+  },
+  {
+   "name": "mail",
+   "cat": "comms",
+   "kw": "메일 이메일 편지 mail email",
+   "hue": "blue"
+  },
+  {
+   "name": "mail-open",
+   "cat": "comms",
+   "kw": "메일 열림 읽음 mail open read",
+   "hue": "blue"
+  },
+  {
+   "name": "map",
+   "cat": "map",
+   "kw": "지도 맵 경로 map",
+   "hue": "green"
+  },
+  {
+   "name": "medal",
+   "cat": "gaming",
+   "kw": "메달 순위 랭킹 medal rank",
+   "hue": "amber"
+  },
+  {
+   "name": "medical-cross",
+   "cat": "health",
+   "kw": "병원 의료 응급 medical hospital",
+   "hue": "red"
+  },
+  {
+   "name": "megaphone",
+   "cat": "comms",
+   "kw": "공지 홍보 확성기 announce megaphone",
+   "hue": "orange"
+  },
+  {
+   "name": "menu",
+   "cat": "core",
+   "kw": "메뉴 목록 리스트 menu list",
+   "hue": "slate"
+  },
+  {
+   "name": "mic",
+   "cat": "comms",
+   "kw": "마이크 음성 녹음 mic voice record",
+   "hue": "red"
+  },
+  {
+   "name": "minus",
+   "cat": "math",
+   "kw": "빼기 마이너스 제거 minus remove",
+   "hue": "slate"
+  },
+  {
+   "name": "mobile",
+   "cat": "devices",
+   "kw": "모바일 휴대폰 앱 mobile phone app",
+   "hue": "slate"
+  },
+  {
+   "name": "moon",
+   "cat": "weather",
+   "kw": "밤 달 야간 moon night",
+   "hue": "indigo"
+  },
+  {
+   "name": "more",
+   "cat": "core",
+   "kw": "더보기 옵션 more options",
+   "hue": "slate"
+  },
+  {
+   "name": "mountain",
+   "cat": "nature",
+   "kw": "산 지형 등산 mountain terrain",
+   "hue": "slate"
+  },
+  {
+   "name": "move",
+   "cat": "arrows",
+   "kw": "이동 드래그 사방 move drag",
+   "hue": "slate"
+  },
+  {
+   "name": "music",
+   "cat": "media",
+   "kw": "음악 노래 뮤직 music song",
+   "hue": "pink"
+  },
+  {
+   "name": "navigation",
+   "cat": "map",
+   "kw": "내비게이션 방향 안내 navigation direction",
+   "hue": "blue"
+  },
+  {
+   "name": "no-entry",
+   "cat": "security",
+   "kw": "금지 차단 접근불가 blocked denied",
+   "hue": "red"
+  },
+  {
+   "name": "node-graph",
+   "cat": "symbols",
+   "kw": "노드 관계도 그래프 node graph",
+   "hue": "indigo"
+  },
+  {
+   "name": "octagon",
+   "cat": "shapes",
+   "kw": "팔각형 도형 octagon",
+   "hue": "slate"
+  },
+  {
+   "name": "oval",
+   "cat": "shapes",
+   "kw": "타원 오벌 oval ellipse",
+   "hue": "slate"
+  },
+  {
+   "name": "paperclip",
+   "cat": "objects",
+   "kw": "첨부 클립 attach paperclip",
+   "hue": "slate"
+  },
+  {
+   "name": "paragraph",
+   "cat": "text",
+   "kw": "문단 단락 본문 paragraph body",
+   "hue": "slate"
+  },
+  {
+   "name": "parking",
+   "cat": "indices",
+   "kw": "주차 P 표시 parking",
+   "hue": "blue"
+  },
+  {
+   "name": "path-node",
+   "cat": "edit",
+   "kw": "패스 곡선 벡터 path vector node",
+   "hue": "indigo"
+  },
+  {
+   "name": "pause",
+   "cat": "media",
+   "kw": "일시정지 멈춤 pause",
+   "hue": "green"
+  },
+  {
+   "name": "paw",
+   "cat": "nature",
+   "kw": "동물 반려 발자국 pet animal paw",
+   "hue": "orange"
+  },
+  {
+   "name": "pentagon",
+   "cat": "shapes",
+   "kw": "오각형 도형 pentagon",
+   "hue": "slate"
+  },
+  {
+   "name": "percent",
+   "cat": "math",
+   "kw": "퍼센트 비율 백분율 percent rate",
+   "hue": "amber"
+  },
+  {
+   "name": "percent-circle",
+   "cat": "variables",
+   "kw": "비율 퍼센트 지표 percent metric",
+   "hue": "amber"
+  },
+  {
+   "name": "person",
+   "cat": "human",
+   "kw": "사람 사용자 개인 person user",
+   "hue": "slate"
+  },
+  {
+   "name": "person-add",
+   "cat": "human",
+   "kw": "사용자추가 초대 add user invite",
+   "hue": "green"
+  },
+  {
+   "name": "person-check",
+   "cat": "human",
+   "kw": "승인 확인된사용자 user verified",
+   "hue": "green"
+  },
+  {
+   "name": "persons-2",
+   "cat": "human",
+   "kw": "두명 그룹 팀 two people group",
+   "hue": "slate"
+  },
+  {
+   "name": "persons-3",
+   "cat": "human",
+   "kw": "여러명 팀 조직 team org",
+   "hue": "slate"
+  },
+  {
+   "name": "phone",
+   "cat": "comms",
+   "kw": "전화 통화 연락 phone call",
+   "hue": "green"
+  },
+  {
+   "name": "photo",
+   "cat": "camera",
+   "kw": "이미지 사진 그림 image photo picture",
+   "hue": "pink"
+  },
+  {
+   "name": "photos",
+   "cat": "camera",
+   "kw": "사진첩 앨범 갤러리 photos album gallery",
+   "hue": "pink"
+  },
+  {
+   "name": "pill",
+   "cat": "health",
+   "kw": "약 알약 복용 pill medicine",
+   "hue": "green"
+  },
+  {
+   "name": "pin",
+   "cat": "map",
+   "kw": "위치 핀 마커 location pin marker",
+   "hue": "red"
+  },
+  {
+   "name": "plane",
+   "cat": "transport",
+   "kw": "비행기 항공 여행 plane flight travel",
+   "hue": "cyan"
+  },
+  {
+   "name": "play",
+   "cat": "media",
+   "kw": "재생 플레이 시작 play start",
+   "hue": "green"
+  },
+  {
+   "name": "plug",
+   "cat": "auto",
+   "kw": "전기충전 플러그 EV charge plug",
+   "hue": "green"
+  },
+  {
+   "name": "plus",
+   "cat": "core",
+   "kw": "추가 더하기 새로 add new create",
+   "hue": "blue"
+  },
+  {
+   "name": "portfolio",
+   "cat": "finance",
+   "kw": "포트폴리오 보유종목 업무 portfolio holdings",
+   "hue": "teal"
+  },
+  {
+   "name": "pound",
+   "cat": "indices",
+   "kw": "파운드 GBP 통화 pound",
+   "hue": "indigo"
+  },
+  {
+   "name": "power",
+   "cat": "symbols",
+   "kw": "전원 켜기 끄기 power on off",
+   "hue": "red"
+  },
+  {
+   "name": "price-tag",
+   "cat": "commerce",
+   "kw": "가격 태그 시세 price tag",
+   "hue": "pink"
+  },
+  {
+   "name": "printer",
+   "cat": "devices",
+   "kw": "프린터 인쇄 printer print",
+   "hue": "slate"
+  },
+  {
+   "name": "progress",
+   "cat": "symbols",
+   "kw": "진행 로딩 대기 progress loading",
+   "hue": "cyan"
+  },
+  {
+   "name": "pulse",
+   "cat": "health",
+   "kw": "심박 활력 그래프 pulse heartrate",
+   "hue": "red"
+  },
+  {
+   "name": "qrcode",
+   "cat": "symbols",
+   "kw": "QR코드 큐알 qr code",
+   "hue": "ink"
+  },
+  {
+   "name": "question",
+   "cat": "symbols",
+   "kw": "물음표 도움말 질문 question help",
+   "hue": "blue"
+  },
+  {
+   "name": "question-circle",
+   "cat": "status",
+   "kw": "도움말 문의 FAQ help faq",
+   "hue": "cyan"
+  },
+  {
+   "name": "quote",
+   "cat": "text",
+   "kw": "인용 블록쿼트 따옴표 quote blockquote",
+   "hue": "slate"
+  },
+  {
+   "name": "receipt",
+   "cat": "commerce",
+   "kw": "영수증 거래내역 명세 receipt transaction",
+   "hue": "orange"
+  },
+  {
+   "name": "refresh",
+   "cat": "core",
+   "kw": "새로고침 갱신 reload refresh",
+   "hue": "cyan"
+  },
+  {
+   "name": "repeat",
+   "cat": "arrows",
+   "kw": "반복 순환 리피트 repeat loop",
+   "hue": "cyan"
+  },
+  {
+   "name": "reply",
+   "cat": "arrows",
+   "kw": "답장 회신 reply back",
+   "hue": "blue"
+  },
+  {
+   "name": "return-key",
+   "cat": "keyboard",
+   "kw": "엔터 리턴 줄바꿈 return enter",
+   "hue": "slate"
+  },
+  {
+   "name": "rewind",
+   "cat": "media",
+   "kw": "되감기 이전 rewind",
+   "hue": "slate"
+  },
+  {
+   "name": "road",
+   "cat": "auto",
+   "kw": "도로 주행 길 road drive",
+   "hue": "slate"
+  },
+  {
+   "name": "rounded-square",
+   "cat": "shapes",
+   "kw": "둥근사각형 스퀴클 rounded square",
+   "hue": "slate"
+  },
+  {
+   "name": "route",
+   "cat": "map",
+   "kw": "경로 노선 이동 route path",
+   "hue": "indigo"
+  },
+  {
+   "name": "ruler",
+   "cat": "edit",
+   "kw": "자 치수 측정 ruler measure",
+   "hue": "amber"
+  },
+  {
+   "name": "run",
+   "cat": "fitness",
+   "kw": "달리기 러닝 run jog",
+   "hue": "orange"
+  },
+  {
+   "name": "safe",
+   "cat": "finance",
+   "kw": "금고 자산보관 safe vault",
+   "hue": "slate"
+  },
+  {
+   "name": "scale-balance",
+   "cat": "tools",
+   "kw": "저울 균형 비교 balance scale",
+   "hue": "indigo"
+  },
+  {
+   "name": "scan",
+   "cat": "camera",
+   "kw": "스캔 인식 촬영 scan detect",
+   "hue": "cyan"
+  },
+  {
+   "name": "scissors",
+   "cat": "edit",
+   "kw": "가위 자르기 cut scissors",
+   "hue": "slate"
+  },
+  {
+   "name": "scooter",
+   "cat": "transport",
+   "kw": "킥보드 스쿠터 scooter",
+   "hue": "purple"
+  },
+  {
+   "name": "screwdriver",
+   "cat": "tools",
+   "kw": "드라이버 조립 screwdriver assemble",
+   "hue": "slate"
+  },
+  {
+   "name": "search",
+   "cat": "core",
+   "kw": "찾기 검색 돋보기 search find",
+   "hue": "blue"
+  },
+  {
+   "name": "seedling",
+   "cat": "nature",
+   "kw": "새싹 성장 신규 sprout growth new",
+   "hue": "green"
+  },
+  {
+   "name": "send",
+   "cat": "comms",
+   "kw": "보내기 전송 발송 send submit",
+   "hue": "blue"
+  },
+  {
+   "name": "server",
+   "cat": "dev",
+   "kw": "서버 인프라 호스팅 server infra host",
+   "hue": "teal"
+  },
+  {
+   "name": "settings",
+   "cat": "core",
+   "kw": "설정 조정 환경설정 settings adjust",
+   "hue": "slate"
+  },
+  {
+   "name": "shape-shield",
+   "cat": "shapes",
+   "kw": "방패형 실드 도형 shield shape",
+   "hue": "slate"
+  },
+  {
+   "name": "shield",
+   "cat": "security",
+   "kw": "보안 보호 방어 security shield protect",
+   "hue": "green"
+  },
+  {
+   "name": "shield-check",
+   "cat": "security",
+   "kw": "검증 안전확인 verified safe",
+   "hue": "green"
+  },
+  {
+   "name": "shift",
+   "cat": "keyboard",
+   "kw": "시프트 대문자 shift caps",
+   "hue": "slate"
+  },
+  {
+   "name": "ship",
+   "cat": "transport",
+   "kw": "배 선박 해운 ship boat",
+   "hue": "blue"
+  },
+  {
+   "name": "shuffle",
+   "cat": "media",
+   "kw": "셔플 임의재생 shuffle random",
+   "hue": "purple"
+  },
+  {
+   "name": "sigma",
+   "cat": "math",
+   "kw": "시그마 합계 sum sigma",
+   "hue": "slate"
+  },
+  {
+   "name": "signal-bars",
+   "cat": "connect",
+   "kw": "신호 세기 통신 signal strength",
+   "hue": "green"
+  },
+  {
+   "name": "signature",
+   "cat": "edit",
+   "kw": "서명 사인 signature sign",
+   "hue": "ink"
+  },
+  {
+   "name": "signpost",
+   "cat": "map",
+   "kw": "이정표 안내판 signpost guide",
+   "hue": "amber"
+  },
+  {
+   "name": "sim",
+   "cat": "devices",
+   "kw": "유심 요금제 통신 sim plan telecom",
+   "hue": "teal"
+  },
+  {
+   "name": "skip-next",
+   "cat": "media",
+   "kw": "다음곡 건너뛰기 skip next",
+   "hue": "slate"
+  },
+  {
+   "name": "skip-prev",
+   "cat": "media",
+   "kw": "이전곡 처음으로 skip previous",
+   "hue": "slate"
+  },
+  {
+   "name": "slider",
+   "cat": "variables",
+   "kw": "슬라이더 값조정 slider range",
+   "hue": "blue"
+  },
+  {
+   "name": "snowflake",
+   "cat": "nature",
+   "kw": "눈 결정 겨울 snow winter",
+   "hue": "cyan"
+  },
+  {
+   "name": "sofa",
+   "cat": "home",
+   "kw": "소파 거실 가구 sofa living",
+   "hue": "orange"
+  },
+  {
+   "name": "sparkle",
+   "cat": "symbols",
+   "kw": "AI 반짝임 자동 magic sparkle ai",
+   "hue": "purple"
+  },
+  {
+   "name": "speaker",
+   "cat": "devices",
+   "kw": "스피커 오디오 speaker audio",
+   "hue": "slate"
+  },
+  {
+   "name": "speedometer",
+   "cat": "auto",
+   "kw": "속도계 계기판 속도 speed gauge",
+   "hue": "slate"
+  },
+  {
+   "name": "sqrt",
+   "cat": "math",
+   "kw": "루트 제곱근 sqrt root",
+   "hue": "slate"
+  },
+  {
+   "name": "square",
+   "cat": "shapes",
+   "kw": "정사각형 네모 도형 square",
+   "hue": "slate"
+  },
+  {
+   "name": "stairs",
+   "cat": "home",
+   "kw": "계단 층 stairs floor",
+   "hue": "slate"
+  },
+  {
+   "name": "star",
+   "cat": "objects",
+   "kw": "즐겨찾기 별 평점 star favorite rating",
+   "hue": "amber"
+  },
+  {
+   "name": "stethoscope",
+   "cat": "health",
+   "kw": "청진기 진료 검진 stethoscope checkup",
+   "hue": "teal"
+  },
+  {
+   "name": "stop",
+   "cat": "media",
+   "kw": "정지 종료 stop",
+   "hue": "red"
+  },
+  {
+   "name": "stopwatch",
+   "cat": "time",
+   "kw": "스톱워치 측정 stopwatch",
+   "hue": "orange"
+  },
+  {
+   "name": "storefront",
+   "cat": "commerce",
+   "kw": "매장 상점 스토어 store shop",
+   "hue": "orange"
+  },
+  {
+   "name": "strikethrough",
+   "cat": "text",
+   "kw": "취소선 스트라이크 strikethrough",
+   "hue": "ink"
+  },
+  {
+   "name": "success",
+   "cat": "status",
+   "kw": "성공 완료 확인 success ok done",
+   "hue": "green"
+  },
+  {
+   "name": "sun",
+   "cat": "weather",
+   "kw": "맑음 해 낮 sun clear day",
+   "hue": "amber"
+  },
+  {
+   "name": "sunrise",
+   "cat": "weather",
+   "kw": "일출 해뜸 아침 sunrise morning",
+   "hue": "amber"
+  },
+  {
+   "name": "sunset",
+   "cat": "weather",
+   "kw": "일몰 해짐 저녁 sunset evening",
+   "hue": "orange"
+  },
+  {
+   "name": "swap-vertical",
+   "cat": "arrows",
+   "kw": "정렬 위아래 교체 swap sort",
+   "hue": "slate"
+  },
+  {
+   "name": "sync",
+   "cat": "connect",
+   "kw": "동기화 새로고침 sync refresh",
+   "hue": "cyan"
+  },
+  {
+   "name": "table",
+   "cat": "data",
+   "kw": "표 테이블 데이터 table grid data",
+   "hue": "slate"
+  },
+  {
+   "name": "tablet",
+   "cat": "devices",
+   "kw": "태블릿 아이패드 tablet ipad",
+   "hue": "slate"
+  },
+  {
+   "name": "target",
+   "cat": "data",
+   "kw": "목표 타깃 정확도 target goal kpi",
+   "hue": "red"
+  },
+  {
+   "name": "terminal",
+   "cat": "dev",
+   "kw": "터미널 콘솔 셸 terminal console shell cli",
+   "hue": "slate"
+  },
+  {
+   "name": "text-size",
+   "cat": "text",
+   "kw": "글자크기 폰트 text size font",
+   "hue": "ink"
+  },
+  {
+   "name": "thermometer",
+   "cat": "health",
+   "kw": "체온 온도 thermometer temperature",
+   "hue": "red"
+  },
+  {
+   "name": "ticket",
+   "cat": "objects",
+   "kw": "티켓 입장권 쿠폰 ticket coupon",
+   "hue": "pink"
+  },
+  {
+   "name": "ticket-t",
+   "cat": "indices",
+   "kw": "티켓 T 표시 ticket",
+   "hue": "pink"
+  },
+  {
+   "name": "timer",
+   "cat": "time",
+   "kw": "타이머 카운트다운 timer countdown",
+   "hue": "purple"
+  },
+  {
+   "name": "tire",
+   "cat": "auto",
+   "kw": "타이어 휠 tire wheel",
+   "hue": "ink"
+  },
+  {
+   "name": "toggle-off",
+   "cat": "variables",
+   "kw": "토글 끔 비활성 toggle off disabled",
+   "hue": "slate"
+  },
+  {
+   "name": "toggle-on",
+   "cat": "variables",
+   "kw": "토글 켬 활성 toggle on enabled",
+   "hue": "green"
+  },
+  {
+   "name": "toolbox",
+   "cat": "tools",
+   "kw": "공구함 도구모음 toolbox kit",
+   "hue": "orange"
+  },
+  {
+   "name": "touch",
+   "cat": "a11y",
+   "kw": "터치 탭 포인터 touch tap pointer",
+   "hue": "slate"
+  },
+  {
+   "name": "train",
+   "cat": "transport",
+   "kw": "기차 지하철 열차 train subway",
+   "hue": "blue"
+  },
+  {
+   "name": "trash",
+   "cat": "core",
+   "kw": "삭제 휴지통 제거 delete trash remove",
+   "hue": "red"
+  },
+  {
+   "name": "tree",
+   "cat": "nature",
+   "kw": "나무 숲 조경 tree forest",
+   "hue": "green"
+  },
+  {
+   "name": "trend-down",
+   "cat": "data",
+   "kw": "하락 감소 내림 down fall decline",
+   "hue": "blue"
+  },
+  {
+   "name": "trend-up",
+   "cat": "data",
+   "kw": "상승 증가 오름 up rise growth",
+   "hue": "red"
+  },
+  {
+   "name": "triangle",
+   "cat": "shapes",
+   "kw": "삼각형 도형 triangle",
+   "hue": "slate"
+  },
+  {
+   "name": "trophy",
+   "cat": "gaming",
+   "kw": "트로피 우승 성과 trophy award win",
+   "hue": "amber"
+  },
+  {
+   "name": "truck",
+   "cat": "transport",
+   "kw": "트럭 배송 물류 truck delivery",
+   "hue": "orange"
+  },
+  {
+   "name": "turn-right",
+   "cat": "arrows",
+   "kw": "우회전 분기 turn branch",
+   "hue": "slate"
+  },
+  {
+   "name": "tv",
+   "cat": "devices",
+   "kw": "TV 디스플레이 화면 tv display",
+   "hue": "slate"
+  },
+  {
+   "name": "umbrella",
+   "cat": "objects",
+   "kw": "우산 보호 우천 umbrella",
+   "hue": "blue"
+  },
+  {
+   "name": "underline",
+   "cat": "text",
+   "kw": "밑줄 언더라인 underline",
+   "hue": "ink"
+  },
+  {
+   "name": "unlock",
+   "cat": "security",
+   "kw": "잠금해제 열림 unlock open",
+   "hue": "slate"
+  },
+  {
+   "name": "upload",
+   "cat": "files",
+   "kw": "업로드 올리기 전송 upload",
+   "hue": "teal"
+  },
+  {
+   "name": "usb",
+   "cat": "devices",
+   "kw": "USB 저장장치 usb drive",
+   "hue": "slate"
+  },
+  {
+   "name": "user-lock",
+   "cat": "people",
+   "kw": "권한 계정보안 user lock access",
+   "hue": "indigo"
+  },
+  {
+   "name": "user-search",
+   "cat": "people",
+   "kw": "사용자검색 조회 user search find",
+   "hue": "cyan"
+  },
+  {
+   "name": "verified",
+   "cat": "security",
+   "kw": "인증배지 공식 verified badge official",
+   "hue": "blue"
+  },
+  {
+   "name": "video",
+   "cat": "media",
+   "kw": "비디오 영상 동영상 video movie",
+   "hue": "indigo"
+  },
+  {
+   "name": "voice-wave",
+   "cat": "comms",
+   "kw": "음성파형 오디오 voice waveform audio",
+   "hue": "purple"
+  },
+  {
+   "name": "volume-high",
+   "cat": "media",
+   "kw": "볼륨 크게 소리 volume high",
+   "hue": "slate"
+  },
+  {
+   "name": "volume-low",
+   "cat": "media",
+   "kw": "볼륨 작게 소리 volume low",
+   "hue": "slate"
+  },
+  {
+   "name": "volume-off",
+   "cat": "media",
+   "kw": "음소거 무음 mute volume off",
+   "hue": "red"
+  },
+  {
+   "name": "walk",
+   "cat": "fitness",
+   "kw": "걷기 산책 walk",
+   "hue": "blue"
+  },
+  {
+   "name": "wallet",
+   "cat": "commerce",
+   "kw": "지갑 자산 wallet",
+   "hue": "green"
+  },
+  {
+   "name": "warning",
+   "cat": "status",
+   "kw": "경고 주의 알림 warning caution",
+   "hue": "amber"
+  },
+  {
+   "name": "washer",
+   "cat": "home",
+   "kw": "세탁기 빨래 washer laundry",
+   "hue": "blue"
+  },
+  {
+   "name": "watch",
+   "cat": "devices",
+   "kw": "워치 스마트워치 watch wearable",
+   "hue": "slate"
+  },
+  {
+   "name": "wave",
+   "cat": "nature",
+   "kw": "파도 물결 바다 wave sea",
+   "hue": "cyan"
+  },
+  {
+   "name": "wheelchair",
+   "cat": "a11y",
+   "kw": "휠체어 이동보조 wheelchair",
+   "hue": "blue"
+  },
+  {
+   "name": "wifi",
+   "cat": "connect",
+   "kw": "와이파이 무선 인터넷 wifi wireless",
+   "hue": "blue"
+  },
+  {
+   "name": "wind",
+   "cat": "weather",
+   "kw": "바람 풍속 wind",
+   "hue": "slate"
+  },
+  {
+   "name": "won",
+   "cat": "indices",
+   "kw": "원화 원 KRW 통화 won",
+   "hue": "amber"
+  },
+  {
+   "name": "wrench",
+   "cat": "tools",
+   "kw": "렌치 설정 정비 wrench maintain",
+   "hue": "slate"
+  },
+  {
+   "name": "yen",
+   "cat": "indices",
+   "kw": "엔 JPY 통화 yen",
+   "hue": "red"
+  }
+ ],
+ "palette": {
+  "red": "#E5484D",
+  "orange": "#EF7C34",
+  "amber": "#E3A13A",
+  "green": "#2FA95C",
+  "teal": "#159B90",
+  "cyan": "#0F8FC4",
+  "blue": "#2C6BED",
+  "indigo": "#4A4ED0",
+  "purple": "#7F55D4",
+  "pink": "#D4438C",
+  "slate": "#5B6675",
+  "ink": "#1C1C1E"
+ },
+ "cats": {
+  "core": "코어 UI",
+  "arrows": "화살표",
+  "shapes": "도형",
+  "symbols": "기호",
+  "text": "텍스트 포맷",
+  "math": "수학",
+  "indices": "인덱스",
+  "time": "시간",
+  "comms": "통신",
+  "connect": "연결",
+  "media": "미디어",
+  "camera": "카메라 및 사진",
+  "edit": "편집",
+  "devices": "기기",
+  "keyboard": "키보드",
+  "home": "홈",
+  "commerce": "상업",
+  "health": "건강",
+  "nature": "자연",
+  "weather": "날씨",
+  "map": "지도",
+  "transport": "교통",
+  "auto": "자동차",
+  "gaming": "게임",
+  "fitness": "피트니스",
+  "human": "인간",
+  "people": "사람",
+  "a11y": "손쉬운 사용",
+  "security": "개인정보 보호 및 보안",
+  "objects": "사물",
+  "tools": "사물 및 도구",
+  "variables": "변수",
+  "files": "파일",
+  "data": "데이터",
+  "finance": "금융",
+  "dev": "개발",
+  "status": "상태"
+ },
+ "stroke": 1.6
+}

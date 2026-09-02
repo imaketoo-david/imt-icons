@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+STROKE = 1.6
+
+PALETTE = {
+    "red":    "#E5484D", "orange": "#EF7C34", "amber":  "#E3A13A",
+    "green":  "#2FA95C", "teal":   "#159B90", "cyan":   "#0F8FC4",
+    "blue":   "#2C6BED", "indigo": "#4A4ED0", "purple": "#7F55D4",
+    "pink":   "#D4438C", "slate":  "#5B6675", "ink":    "#1C1C1E",
+}
+
+# 애플 단축어 글리프 카테고리 31종 + IMT 실무 카테고리 6종
+CATS = {
+    "core":      "코어 UI",
+    "arrows":    "화살표",
+    "shapes":    "도형",
+    "symbols":   "기호",
+    "text":      "텍스트 포맷",
+    "math":      "수학",
+    "indices":   "인덱스",
+    "time":      "시간",
+    "comms":     "통신",
+    "connect":   "연결",
+    "media":     "미디어",
+    "camera":    "카메라 및 사진",
+    "edit":      "편집",
+    "devices":   "기기",
+    "keyboard":  "키보드",
+    "home":      "홈",
+    "commerce":  "상업",
+    "health":    "건강",
+    "nature":    "자연",
+    "weather":   "날씨",
+    "map":       "지도",
+    "transport": "교통",
+    "auto":      "자동차",
+    "gaming":    "게임",
+    "fitness":   "피트니스",
+    "human":     "인간",
+    "people":    "사람",
+    "a11y":      "손쉬운 사용",
+    "security":  "개인정보 보호 및 보안",
+    "objects":   "사물",
+    "tools":     "사물 및 도구",
+    "variables": "변수",
+    "files":     "파일",
+    "data":      "데이터",
+    "finance":   "금융",
+    "dev":       "개발",
+    "status":    "상태",
+}
