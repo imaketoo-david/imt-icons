@@ -349,6 +349,12 @@
    "hue": "green"
   },
   {
+   "name": "check-circle",
+   "cat": "status",
+   "kw": "선택 완료 확인 select done check",
+   "hue": "green"
+  },
+  {
    "name": "chevron-down",
    "cat": "arrows",
    "kw": "아래 펼치기 드롭다운 chevron down",
@@ -1129,6 +1135,12 @@
    "hue": "blue"
   },
   {
+   "name": "paste",
+   "cat": "edit",
+   "kw": "붙여넣기 클립보드 paste clipboard",
+   "hue": "slate"
+  },
+  {
    "name": "path-node",
    "cat": "edit",
    "kw": "패스 곡선 벡터 path vector node",
@@ -1321,6 +1333,12 @@
    "hue": "orange"
   },
   {
+   "name": "redo",
+   "cat": "edit",
+   "kw": "다시실행 재실행 redo forward",
+   "hue": "slate"
+  },
+  {
    "name": "refresh",
    "cat": "core",
    "kw": "새로고침 갱신 reload refresh",
@@ -1453,6 +1471,12 @@
    "hue": "slate"
   },
   {
+   "name": "share",
+   "cat": "core",
+   "kw": "공유 내보내기 share export",
+   "hue": "blue"
+  },
+  {
    "name": "shield",
    "cat": "security",
    "kw": "보안 보호 방어 security shield protect",
@@ -1541,6 +1565,12 @@
    "cat": "home",
    "kw": "소파 거실 가구 sofa living",
    "hue": "orange"
+  },
+  {
+   "name": "sort",
+   "cat": "data",
+   "kw": "정렬 오름차순 내림차순 sort order",
+   "hue": "indigo"
   },
   {
    "name": "sparkle",
@@ -1675,6 +1705,12 @@
    "hue": "slate"
   },
   {
+   "name": "text-search",
+   "cat": "text",
+   "kw": "문서내검색 찾기 find in page",
+   "hue": "blue"
+  },
+  {
    "name": "text-size",
    "cat": "text",
    "kw": "글자크기 폰트 text size font",
@@ -1685,6 +1721,18 @@
    "cat": "health",
    "kw": "체온 온도 thermometer temperature",
    "hue": "red"
+  },
+  {
+   "name": "thumbs-down",
+   "cat": "human",
+   "kw": "싫어요 비추천 dislike thumbs down",
+   "hue": "red"
+  },
+  {
+   "name": "thumbs-up",
+   "cat": "human",
+   "kw": "좋아요 추천 like thumbs up",
+   "hue": "green"
   },
   {
    "name": "ticket",
@@ -1805,6 +1853,12 @@
    "cat": "text",
    "kw": "밑줄 언더라인 underline",
    "hue": "ink"
+  },
+  {
+   "name": "undo",
+   "cat": "edit",
+   "kw": "실행취소 되돌리기 undo revert back",
+   "hue": "slate"
   },
   {
    "name": "unlock",
