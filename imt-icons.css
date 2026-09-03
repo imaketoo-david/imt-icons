@@ -39,8 +39,23 @@
 /* 크기 3단 — 애플은 cap height 를 기준으로 잡는다 */
 .imt-i--scale-s{--imt-s:.87}  .imt-i--scale-m{--imt-s:1}  .imt-i--scale-l{--imt-s:1.13}
 
-/* 예전 이름 — rem 고정 크기. 새 코드는 위의 --imt-s 를 쓴다. */
-.imt-i--sm { width: 1rem;  height: 1rem;  }
-.imt-i--md { width: 1.5rem; height: 1.5rem; }
-.imt-i--lg { width: 2rem;  height: 2rem;  }
-.imt-i--xl { width: 2.75rem; height: 2.75rem; }
+/* ── 크기별 광학 보정 (2026-09-03) ────────────────────────────
+   획을 크기에 정비례로 키우면 큰 아이콘이 «굵어» 보인다. 24px 에서 1.6 인
+   획은 48px 에서 3.2px 이 되는데, 눈은 그걸 더 굵다고 읽는다.
+   그래서 커질수록 --imt-w 를 낮춰 화면상 굵기가 완만하게 자라게 한다.
+     16px→1.15 · 24→1.60 · 32→1.95 · 40→2.25 · 48→2.50 · 64→3.00
+   L-9.4 «크기는 강조를 조절하는 축이지 굵기를 바꾸는 축이 아니다» 를
+   계산이 아니라 «눈» 기준으로 지키는 장치다. */
+.imt-i--px16 { --imt-w:1.73; width:16px;  height:16px  }
+.imt-i--px20 { --imt-w:1.62; width:20px;  height:20px  }
+.imt-i--px24 { --imt-w:1.6;  width:24px;  height:24px  }
+.imt-i--px32 { --imt-w:1.46; width:32px;  height:32px  }
+.imt-i--px40 { --imt-w:1.35; width:40px;  height:40px  }
+.imt-i--px48 { --imt-w:1.25; width:48px;  height:48px  }
+.imt-i--px64 { --imt-w:1.13; width:64px;  height:64px  }
+
+/* 예전 이름 — rem 고정 크기. 광학 보정을 같이 걸어 둔다. */
+.imt-i--sm { width: 1rem;   height: 1rem;   --imt-w:1.73 }
+.imt-i--md { width: 1.5rem; height: 1.5rem; --imt-w:1.6  }
+.imt-i--lg { width: 2rem;   height: 2rem;   --imt-w:1.46 }
+.imt-i--xl { width: 2.75rem; height: 2.75rem; --imt-w:1.3 }
