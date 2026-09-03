@@ -23,7 +23,7 @@ DATA = {n: {"c": ICONS[n]["cat"],
             "h": ICONS[n]["hue"],
             "o": [[k, d] for k, d in ICONS[n]["ops"]]} for n in names}
 
-HTML = """<!doctype html>
+HTML = r"""<!doctype html>
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">

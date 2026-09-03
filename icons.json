@@ -932,6 +932,34 @@
    "base": true
   },
   {
+   "name": "bookmark-check",
+   "cat": "core",
+   "kw": "저장됨 담김 북마크 완료 saved bookmarked",
+   "hue": "amber",
+   "base": true
+  },
+  {
+   "name": "bookmark-check.circle",
+   "cat": "core",
+   "kw": "저장됨 담김 북마크 완료 saved bookmarked 원 안 circle",
+   "hue": "amber",
+   "base": false
+  },
+  {
+   "name": "bookmark-check.slash",
+   "cat": "core",
+   "kw": "저장됨 담김 북마크 완료 saved bookmarked 없음 끔 차단 slash off disabled",
+   "hue": "amber",
+   "base": false
+  },
+  {
+   "name": "bookmark-check.square",
+   "cat": "core",
+   "kw": "저장됨 담김 북마크 완료 saved bookmarked 사각 안 square",
+   "hue": "amber",
+   "base": false
+  },
+  {
    "name": "bookmark.circle",
    "cat": "objects",
    "kw": "북마크 저장 스크랩 bookmark save 원 안 circle",
@@ -1548,6 +1576,34 @@
    "base": true
   },
   {
+   "name": "chat-add",
+   "cat": "comms",
+   "kw": "새 대화 문의하기 말풍선 추가 new chat add",
+   "hue": "blue",
+   "base": true
+  },
+  {
+   "name": "chat-add.circle",
+   "cat": "comms",
+   "kw": "새 대화 문의하기 말풍선 추가 new chat add 원 안 circle",
+   "hue": "blue",
+   "base": false
+  },
+  {
+   "name": "chat-add.slash",
+   "cat": "comms",
+   "kw": "새 대화 문의하기 말풍선 추가 new chat add 없음 끔 차단 slash off disabled",
+   "hue": "blue",
+   "base": false
+  },
+  {
+   "name": "chat-add.square",
+   "cat": "comms",
+   "kw": "새 대화 문의하기 말풍선 추가 new chat add 사각 안 square",
+   "hue": "blue",
+   "base": false
+  },
+  {
    "name": "chat-lines",
    "cat": "comms",
    "kw": "메시지 댓글 내용 message comment",
@@ -1573,6 +1629,34 @@
    "cat": "comms",
    "kw": "메시지 댓글 내용 message comment 사각 안 square",
    "hue": "green",
+   "base": false
+  },
+  {
+   "name": "chat-question",
+   "cat": "comms",
+   "kw": "질문 문의 도움말 물음 말풍선 ask question help",
+   "hue": "blue",
+   "base": true
+  },
+  {
+   "name": "chat-question.circle",
+   "cat": "comms",
+   "kw": "질문 문의 도움말 물음 말풍선 ask question help 원 안 circle",
+   "hue": "blue",
+   "base": false
+  },
+  {
+   "name": "chat-question.slash",
+   "cat": "comms",
+   "kw": "질문 문의 도움말 물음 말풍선 ask question help 없음 끔 차단 slash off disabled",
+   "hue": "blue",
+   "base": false
+  },
+  {
+   "name": "chat-question.square",
+   "cat": "comms",
+   "kw": "질문 문의 도움말 물음 말풍선 ask question help 사각 안 square",
+   "hue": "blue",
    "base": false
   },
   {
@@ -1650,6 +1734,174 @@
    "cat": "core",
    "kw": "확인 완료 체크 done complete 사각 안 square",
    "hue": "green",
+   "base": false
+  },
+  {
+   "name": "chess-bishop",
+   "cat": "gaming",
+   "kw": "체스 비숍 주교 말 chess bishop",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "chess-bishop.circle",
+   "cat": "gaming",
+   "kw": "체스 비숍 주교 말 chess bishop 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-bishop.slash",
+   "cat": "gaming",
+   "kw": "체스 비숍 주교 말 chess bishop 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-bishop.square",
+   "cat": "gaming",
+   "kw": "체스 비숍 주교 말 chess bishop 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-king",
+   "cat": "gaming",
+   "kw": "체스 킹 왕 말 chess king",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "chess-king.circle",
+   "cat": "gaming",
+   "kw": "체스 킹 왕 말 chess king 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-king.slash",
+   "cat": "gaming",
+   "kw": "체스 킹 왕 말 chess king 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-king.square",
+   "cat": "gaming",
+   "kw": "체스 킹 왕 말 chess king 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-knight",
+   "cat": "gaming",
+   "kw": "체스 나이트 기사 말 chess knight",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "chess-knight.circle",
+   "cat": "gaming",
+   "kw": "체스 나이트 기사 말 chess knight 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-knight.slash",
+   "cat": "gaming",
+   "kw": "체스 나이트 기사 말 chess knight 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-knight.square",
+   "cat": "gaming",
+   "kw": "체스 나이트 기사 말 chess knight 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-pawn",
+   "cat": "gaming",
+   "kw": "체스 폰 말 chess pawn",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "chess-pawn.circle",
+   "cat": "gaming",
+   "kw": "체스 폰 말 chess pawn 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-pawn.slash",
+   "cat": "gaming",
+   "kw": "체스 폰 말 chess pawn 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-pawn.square",
+   "cat": "gaming",
+   "kw": "체스 폰 말 chess pawn 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-queen",
+   "cat": "gaming",
+   "kw": "체스 퀸 여왕 말 chess queen",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "chess-queen.circle",
+   "cat": "gaming",
+   "kw": "체스 퀸 여왕 말 chess queen 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-queen.slash",
+   "cat": "gaming",
+   "kw": "체스 퀸 여왕 말 chess queen 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-queen.square",
+   "cat": "gaming",
+   "kw": "체스 퀸 여왕 말 chess queen 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-rook",
+   "cat": "gaming",
+   "kw": "체스 룩 성 말 chess rook castle",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "chess-rook.circle",
+   "cat": "gaming",
+   "kw": "체스 룩 성 말 chess rook castle 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-rook.slash",
+   "cat": "gaming",
+   "kw": "체스 룩 성 말 chess rook castle 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "chess-rook.square",
+   "cat": "gaming",
+   "kw": "체스 룩 성 말 chess rook castle 사각 안 square",
+   "hue": "slate",
    "base": false
   },
   {
@@ -2689,6 +2941,13 @@
    "base": false
   },
   {
+   "name": "dot",
+   "cat": "shapes",
+   "kw": "점 표시 작은점 dot bullet",
+   "hue": "slate",
+   "base": true
+  },
+  {
    "name": "dots-grid",
    "cat": "symbols",
    "kw": "앱 그리드 메뉴 apps grid",
@@ -3162,6 +3421,34 @@
    "cat": "edit",
    "kw": "스포이드 색추출 eyedropper color picker 사각 안 square",
    "hue": "purple",
+   "base": false
+  },
+  {
+   "name": "face",
+   "cat": "people",
+   "kw": "표정 감정 이모지 반응 mood face emoji",
+   "hue": "amber",
+   "base": true
+  },
+  {
+   "name": "face.circle",
+   "cat": "people",
+   "kw": "표정 감정 이모지 반응 mood face emoji 원 안 circle",
+   "hue": "amber",
+   "base": false
+  },
+  {
+   "name": "face.slash",
+   "cat": "people",
+   "kw": "표정 감정 이모지 반응 mood face emoji 없음 끔 차단 slash off disabled",
+   "hue": "amber",
+   "base": false
+  },
+  {
+   "name": "face.square",
+   "cat": "people",
+   "kw": "표정 감정 이모지 반응 mood face emoji 사각 안 square",
+   "hue": "amber",
    "base": false
   },
   {
@@ -3837,6 +4124,34 @@
    "base": false
   },
   {
+   "name": "grid-2x2",
+   "cat": "shapes",
+   "kw": "격자 4분할 타일 보기 grid tiles",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "grid-2x2.circle",
+   "cat": "shapes",
+   "kw": "격자 4분할 타일 보기 grid tiles 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "grid-2x2.slash",
+   "cat": "shapes",
+   "kw": "격자 4분할 타일 보기 grid tiles 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "grid-2x2.square",
+   "cat": "shapes",
+   "kw": "격자 4분할 타일 보기 grid tiles 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
    "name": "hammer",
    "cat": "tools",
    "kw": "망치 수리 도구 hammer repair",
@@ -3982,6 +4297,34 @@
    "kw": "육각형 도형 hexagon",
    "hue": "slate",
    "base": true
+  },
+  {
+   "name": "hexagon-check",
+   "cat": "status",
+   "kw": "검증 인증 확인됨 육각 verified hexagon",
+   "hue": "green",
+   "base": true
+  },
+  {
+   "name": "hexagon-check.circle",
+   "cat": "status",
+   "kw": "검증 인증 확인됨 육각 verified hexagon 원 안 circle",
+   "hue": "green",
+   "base": false
+  },
+  {
+   "name": "hexagon-check.slash",
+   "cat": "status",
+   "kw": "검증 인증 확인됨 육각 verified hexagon 없음 끔 차단 slash off disabled",
+   "hue": "green",
+   "base": false
+  },
+  {
+   "name": "hexagon-check.square",
+   "cat": "status",
+   "kw": "검증 인증 확인됨 육각 verified hexagon 사각 안 square",
+   "hue": "green",
+   "base": false
   },
   {
    "name": "hexagon.circle",
@@ -4618,6 +4961,62 @@
    "cat": "security",
    "kw": "잠금 보안 비공개 lock secure private 사각 안 square",
    "hue": "indigo",
+   "base": false
+  },
+  {
+   "name": "login",
+   "cat": "core",
+   "kw": "들어가기 로그인 입장 진입 enter login signin",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "login.circle",
+   "cat": "core",
+   "kw": "들어가기 로그인 입장 진입 enter login signin 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "login.slash",
+   "cat": "core",
+   "kw": "들어가기 로그인 입장 진입 enter login signin 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "login.square",
+   "cat": "core",
+   "kw": "들어가기 로그인 입장 진입 enter login signin 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "logout",
+   "cat": "core",
+   "kw": "나가기 로그아웃 종료 출구 exit logout signout",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "logout.circle",
+   "cat": "core",
+   "kw": "나가기 로그아웃 종료 출구 exit logout signout 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "logout.slash",
+   "cat": "core",
+   "kw": "나가기 로그아웃 종료 출구 exit logout signout 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "logout.square",
+   "cat": "core",
+   "kw": "나가기 로그아웃 종료 출구 exit logout signout 사각 안 square",
+   "hue": "slate",
    "base": false
   },
   {
@@ -5531,6 +5930,34 @@
    "base": false
   },
   {
+   "name": "person-voice",
+   "cat": "people",
+   "kw": "말하는 사람 음성인식 발화 화자 speaking voice",
+   "hue": "indigo",
+   "base": true
+  },
+  {
+   "name": "person-voice.circle",
+   "cat": "people",
+   "kw": "말하는 사람 음성인식 발화 화자 speaking voice 원 안 circle",
+   "hue": "indigo",
+   "base": false
+  },
+  {
+   "name": "person-voice.slash",
+   "cat": "people",
+   "kw": "말하는 사람 음성인식 발화 화자 speaking voice 없음 끔 차단 slash off disabled",
+   "hue": "indigo",
+   "base": false
+  },
+  {
+   "name": "person-voice.square",
+   "cat": "people",
+   "kw": "말하는 사람 음성인식 발화 화자 speaking voice 사각 안 square",
+   "hue": "indigo",
+   "base": false
+  },
+  {
    "name": "person.circle",
    "cat": "human",
    "kw": "사람 사용자 개인 person user 원 안 circle",
@@ -5837,6 +6264,34 @@
    "kw": "추가 더하기 새로 add new create",
    "hue": "blue",
    "base": true
+  },
+  {
+   "name": "plus-circle",
+   "cat": "core",
+   "kw": "추가 새로 만들기 더하기 원 add new plus",
+   "hue": "green",
+   "base": true
+  },
+  {
+   "name": "plus-circle.circle",
+   "cat": "core",
+   "kw": "추가 새로 만들기 더하기 원 add new plus 원 안 circle",
+   "hue": "green",
+   "base": false
+  },
+  {
+   "name": "plus-circle.slash",
+   "cat": "core",
+   "kw": "추가 새로 만들기 더하기 원 add new plus 없음 끔 차단 slash off disabled",
+   "hue": "green",
+   "base": false
+  },
+  {
+   "name": "plus-circle.square",
+   "cat": "core",
+   "kw": "추가 새로 만들기 더하기 원 add new plus 사각 안 square",
+   "hue": "green",
+   "base": false
   },
   {
    "name": "plus.circle",
@@ -7400,6 +7855,34 @@
    "base": false
   },
   {
+   "name": "spinner",
+   "cat": "status",
+   "kw": "로딩 처리중 대기 회전 spinner loading",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "spinner.circle",
+   "cat": "status",
+   "kw": "로딩 처리중 대기 회전 spinner loading 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "spinner.slash",
+   "cat": "status",
+   "kw": "로딩 처리중 대기 회전 spinner loading 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "spinner.square",
+   "cat": "status",
+   "kw": "로딩 처리중 대기 회전 spinner loading 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
    "name": "sqrt",
    "cat": "math",
    "kw": "루트 제곱근 sqrt root",
@@ -8321,6 +8804,34 @@
    "cat": "transport",
    "kw": "기차 지하철 열차 train subway 사각 안 square",
    "hue": "blue",
+   "base": false
+  },
+  {
+   "name": "translate",
+   "cat": "text",
+   "kw": "번역 언어 다국어 통역 translate language",
+   "hue": "cyan",
+   "base": true
+  },
+  {
+   "name": "translate.circle",
+   "cat": "text",
+   "kw": "번역 언어 다국어 통역 translate language 원 안 circle",
+   "hue": "cyan",
+   "base": false
+  },
+  {
+   "name": "translate.slash",
+   "cat": "text",
+   "kw": "번역 언어 다국어 통역 translate language 없음 끔 차단 slash off disabled",
+   "hue": "cyan",
+   "base": false
+  },
+  {
+   "name": "translate.square",
+   "cat": "text",
+   "kw": "번역 언어 다국어 통역 translate language 사각 안 square",
+   "hue": "cyan",
    "base": false
   },
   {
@@ -9387,8 +9898,8 @@
  },
  "stroke": 1.6,
  "count": {
-  "base": 334,
-  "derived": 999,
-  "total": 1333
+  "base": 353,
+  "derived": 1053,
+  "total": 1406
  }
 }
