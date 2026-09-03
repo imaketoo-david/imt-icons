@@ -533,6 +533,34 @@
    "base": false
   },
   {
+   "name": "axis",
+   "cat": "data",
+   "kw": "축 눈금 좌표 기준선 axis scale",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "axis.circle",
+   "cat": "data",
+   "kw": "축 눈금 좌표 기준선 axis scale 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "axis.slash",
+   "cat": "data",
+   "kw": "축 눈금 좌표 기준선 axis scale 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "axis.square",
+   "cat": "data",
+   "kw": "축 눈금 좌표 기준선 axis scale 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
    "name": "bag",
    "cat": "commerce",
    "kw": "쇼핑백 구매 bag shop",
@@ -1513,6 +1541,90 @@
    "base": false
   },
   {
+   "name": "chart-donut",
+   "cat": "data",
+   "kw": "도넛 원그래프 비중 구성비 donut",
+   "hue": "purple",
+   "base": true
+  },
+  {
+   "name": "chart-donut.circle",
+   "cat": "data",
+   "kw": "도넛 원그래프 비중 구성비 donut 원 안 circle",
+   "hue": "purple",
+   "base": false
+  },
+  {
+   "name": "chart-donut.slash",
+   "cat": "data",
+   "kw": "도넛 원그래프 비중 구성비 donut 없음 끔 차단 slash off disabled",
+   "hue": "purple",
+   "base": false
+  },
+  {
+   "name": "chart-donut.square",
+   "cat": "data",
+   "kw": "도넛 원그래프 비중 구성비 donut 사각 안 square",
+   "hue": "purple",
+   "base": false
+  },
+  {
+   "name": "chart-funnel",
+   "cat": "data",
+   "kw": "퍼널 깔때기 전환 단계 funnel",
+   "hue": "orange",
+   "base": true
+  },
+  {
+   "name": "chart-funnel.circle",
+   "cat": "data",
+   "kw": "퍼널 깔때기 전환 단계 funnel 원 안 circle",
+   "hue": "orange",
+   "base": false
+  },
+  {
+   "name": "chart-funnel.slash",
+   "cat": "data",
+   "kw": "퍼널 깔때기 전환 단계 funnel 없음 끔 차단 slash off disabled",
+   "hue": "orange",
+   "base": false
+  },
+  {
+   "name": "chart-funnel.square",
+   "cat": "data",
+   "kw": "퍼널 깔때기 전환 단계 funnel 사각 안 square",
+   "hue": "orange",
+   "base": false
+  },
+  {
+   "name": "chart-heatmap",
+   "cat": "data",
+   "kw": "히트맵 밀도 격자 heatmap",
+   "hue": "red",
+   "base": true
+  },
+  {
+   "name": "chart-heatmap.circle",
+   "cat": "data",
+   "kw": "히트맵 밀도 격자 heatmap 원 안 circle",
+   "hue": "red",
+   "base": false
+  },
+  {
+   "name": "chart-heatmap.slash",
+   "cat": "data",
+   "kw": "히트맵 밀도 격자 heatmap 없음 끔 차단 slash off disabled",
+   "hue": "red",
+   "base": false
+  },
+  {
+   "name": "chart-heatmap.square",
+   "cat": "data",
+   "kw": "히트맵 밀도 격자 heatmap 사각 안 square",
+   "hue": "red",
+   "base": false
+  },
+  {
    "name": "chart-line",
    "cat": "data",
    "kw": "선그래프 추이 차트 line chart trend",
@@ -1566,6 +1678,90 @@
    "cat": "data",
    "kw": "파이차트 비중 구성 pie chart share 사각 안 square",
    "hue": "purple",
+   "base": false
+  },
+  {
+   "name": "chart-radar",
+   "cat": "data",
+   "kw": "레이더 방사형 다차원 radar spider",
+   "hue": "cyan",
+   "base": true
+  },
+  {
+   "name": "chart-radar.circle",
+   "cat": "data",
+   "kw": "레이더 방사형 다차원 radar spider 원 안 circle",
+   "hue": "cyan",
+   "base": false
+  },
+  {
+   "name": "chart-radar.slash",
+   "cat": "data",
+   "kw": "레이더 방사형 다차원 radar spider 없음 끔 차단 slash off disabled",
+   "hue": "cyan",
+   "base": false
+  },
+  {
+   "name": "chart-radar.square",
+   "cat": "data",
+   "kw": "레이더 방사형 다차원 radar spider 사각 안 square",
+   "hue": "cyan",
+   "base": false
+  },
+  {
+   "name": "chart-scatter",
+   "cat": "data",
+   "kw": "산점도 분포 상관 scatter plot",
+   "hue": "teal",
+   "base": true
+  },
+  {
+   "name": "chart-scatter.circle",
+   "cat": "data",
+   "kw": "산점도 분포 상관 scatter plot 원 안 circle",
+   "hue": "teal",
+   "base": false
+  },
+  {
+   "name": "chart-scatter.slash",
+   "cat": "data",
+   "kw": "산점도 분포 상관 scatter plot 없음 끔 차단 slash off disabled",
+   "hue": "teal",
+   "base": false
+  },
+  {
+   "name": "chart-scatter.square",
+   "cat": "data",
+   "kw": "산점도 분포 상관 scatter plot 사각 안 square",
+   "hue": "teal",
+   "base": false
+  },
+  {
+   "name": "chart-stacked",
+   "cat": "data",
+   "kw": "누적 막대 스택 구성 stacked bar",
+   "hue": "indigo",
+   "base": true
+  },
+  {
+   "name": "chart-stacked.circle",
+   "cat": "data",
+   "kw": "누적 막대 스택 구성 stacked bar 원 안 circle",
+   "hue": "indigo",
+   "base": false
+  },
+  {
+   "name": "chart-stacked.slash",
+   "cat": "data",
+   "kw": "누적 막대 스택 구성 stacked bar 없음 끔 차단 slash off disabled",
+   "hue": "indigo",
+   "base": false
+  },
+  {
+   "name": "chart-stacked.square",
+   "cat": "data",
+   "kw": "누적 막대 스택 구성 stacked bar 사각 안 square",
+   "hue": "indigo",
    "base": false
   },
   {
@@ -1734,6 +1930,62 @@
    "cat": "core",
    "kw": "확인 완료 체크 done complete 사각 안 square",
    "hue": "green",
+   "base": false
+  },
+  {
+   "name": "checkbox-off",
+   "cat": "variables",
+   "kw": "체크안됨 빈 체크박스 checkbox empty",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "checkbox-off.circle",
+   "cat": "variables",
+   "kw": "체크안됨 빈 체크박스 checkbox empty 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "checkbox-off.slash",
+   "cat": "variables",
+   "kw": "체크안됨 빈 체크박스 checkbox empty 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "checkbox-off.square",
+   "cat": "variables",
+   "kw": "체크안됨 빈 체크박스 checkbox empty 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "checkbox-on",
+   "cat": "variables",
+   "kw": "체크됨 선택 다중선택 checkbox checked",
+   "hue": "blue",
+   "base": true
+  },
+  {
+   "name": "checkbox-on.circle",
+   "cat": "variables",
+   "kw": "체크됨 선택 다중선택 checkbox checked 원 안 circle",
+   "hue": "blue",
+   "base": false
+  },
+  {
+   "name": "checkbox-on.slash",
+   "cat": "variables",
+   "kw": "체크됨 선택 다중선택 checkbox checked 없음 끔 차단 slash off disabled",
+   "hue": "blue",
+   "base": false
+  },
+  {
+   "name": "checkbox-on.square",
+   "cat": "variables",
+   "kw": "체크됨 선택 다중선택 checkbox checked 사각 안 square",
+   "hue": "blue",
    "base": false
   },
   {
@@ -2829,6 +3081,34 @@
    "base": false
   },
   {
+   "name": "dividend",
+   "cat": "finance",
+   "kw": "배당 분배 수익금 dividend payout",
+   "hue": "green",
+   "base": true
+  },
+  {
+   "name": "dividend.circle",
+   "cat": "finance",
+   "kw": "배당 분배 수익금 dividend payout 원 안 circle",
+   "hue": "green",
+   "base": false
+  },
+  {
+   "name": "dividend.slash",
+   "cat": "finance",
+   "kw": "배당 분배 수익금 dividend payout 없음 끔 차단 slash off disabled",
+   "hue": "green",
+   "base": false
+  },
+  {
+   "name": "dividend.square",
+   "cat": "finance",
+   "kw": "배당 분배 수익금 dividend payout 사각 안 square",
+   "hue": "green",
+   "base": false
+  },
+  {
    "name": "doc",
    "cat": "files",
    "kw": "문서 파일 리포트 document file report",
@@ -3029,6 +3309,34 @@
    "cat": "nature",
    "kw": "물방울 수분 액체 drop water 사각 안 square",
    "hue": "cyan",
+   "base": false
+  },
+  {
+   "name": "dropdown",
+   "cat": "variables",
+   "kw": "드롭다운 선택목록 펼침 select dropdown",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "dropdown.circle",
+   "cat": "variables",
+   "kw": "드롭다운 선택목록 펼침 select dropdown 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "dropdown.slash",
+   "cat": "variables",
+   "kw": "드롭다운 선택목록 펼침 select dropdown 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "dropdown.square",
+   "cat": "variables",
+   "kw": "드롭다운 선택목록 펼침 select dropdown 사각 안 square",
+   "hue": "slate",
    "base": false
   },
   {
@@ -3281,6 +3589,34 @@
    "cat": "indices",
    "kw": "유로 EUR 통화 euro 사각 안 square",
    "hue": "blue",
+   "base": false
+  },
+  {
+   "name": "exchange",
+   "cat": "finance",
+   "kw": "환전 교환 통화변환 exchange currency",
+   "hue": "cyan",
+   "base": true
+  },
+  {
+   "name": "exchange.circle",
+   "cat": "finance",
+   "kw": "환전 교환 통화변환 exchange currency 원 안 circle",
+   "hue": "cyan",
+   "base": false
+  },
+  {
+   "name": "exchange.slash",
+   "cat": "finance",
+   "kw": "환전 교환 통화변환 exchange currency 없음 끔 차단 slash off disabled",
+   "hue": "cyan",
+   "base": false
+  },
+  {
+   "name": "exchange.square",
+   "cat": "finance",
+   "kw": "환전 교환 통화변환 exchange currency 사각 안 square",
+   "hue": "cyan",
    "base": false
   },
   {
@@ -3869,6 +4205,34 @@
    "cat": "fitness",
    "kw": "걸음 발자국 보행수 steps walk 사각 안 square",
    "hue": "teal",
+   "base": false
+  },
+  {
+   "name": "forecast",
+   "cat": "data",
+   "kw": "예측 전망 추정 미래 forecast",
+   "hue": "amber",
+   "base": true
+  },
+  {
+   "name": "forecast.circle",
+   "cat": "data",
+   "kw": "예측 전망 추정 미래 forecast 원 안 circle",
+   "hue": "amber",
+   "base": false
+  },
+  {
+   "name": "forecast.slash",
+   "cat": "data",
+   "kw": "예측 전망 추정 미래 forecast 없음 끔 차단 slash off disabled",
+   "hue": "amber",
+   "base": false
+  },
+  {
+   "name": "forecast.square",
+   "cat": "data",
+   "kw": "예측 전망 추정 미래 forecast 사각 안 square",
+   "hue": "amber",
    "base": false
   },
   {
@@ -4824,6 +5188,34 @@
    "base": false
   },
   {
+   "name": "legend",
+   "cat": "data",
+   "kw": "범례 계열 표시 legend series",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "legend.circle",
+   "cat": "data",
+   "kw": "범례 계열 표시 legend series 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "legend.slash",
+   "cat": "data",
+   "kw": "범례 계열 표시 legend series 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "legend.square",
+   "cat": "data",
+   "kw": "범례 계열 표시 legend series 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
    "name": "link",
    "cat": "connect",
    "kw": "링크 연결 url link connect",
@@ -5475,6 +5867,34 @@
    "base": false
   },
   {
+   "name": "no-data",
+   "cat": "data",
+   "kw": "데이터 없음 빈 상태 결과없음 empty no data",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "no-data.circle",
+   "cat": "data",
+   "kw": "데이터 없음 빈 상태 결과없음 empty no data 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "no-data.slash",
+   "cat": "data",
+   "kw": "데이터 없음 빈 상태 결과없음 empty no data 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "no-data.square",
+   "cat": "data",
+   "kw": "데이터 없음 빈 상태 결과없음 empty no data 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
    "name": "no-entry",
    "cat": "security",
    "kw": "금지 차단 접근불가 blocked denied",
@@ -5556,6 +5976,62 @@
    "cat": "shapes",
    "kw": "팔각형 도형 octagon 사각 안 square",
    "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "orderbook",
+   "cat": "finance",
+   "kw": "호가 매수매도 잔량 주문창 orderbook depth",
+   "hue": "indigo",
+   "base": true
+  },
+  {
+   "name": "orderbook.circle",
+   "cat": "finance",
+   "kw": "호가 매수매도 잔량 주문창 orderbook depth 원 안 circle",
+   "hue": "indigo",
+   "base": false
+  },
+  {
+   "name": "orderbook.slash",
+   "cat": "finance",
+   "kw": "호가 매수매도 잔량 주문창 orderbook depth 없음 끔 차단 slash off disabled",
+   "hue": "indigo",
+   "base": false
+  },
+  {
+   "name": "orderbook.square",
+   "cat": "finance",
+   "kw": "호가 매수매도 잔량 주문창 orderbook depth 사각 안 square",
+   "hue": "indigo",
+   "base": false
+  },
+  {
+   "name": "outlier",
+   "cat": "data",
+   "kw": "이상치 특이값 튄값 outlier anomaly",
+   "hue": "red",
+   "base": true
+  },
+  {
+   "name": "outlier.circle",
+   "cat": "data",
+   "kw": "이상치 특이값 튄값 outlier anomaly 원 안 circle",
+   "hue": "red",
+   "base": false
+  },
+  {
+   "name": "outlier.slash",
+   "cat": "data",
+   "kw": "이상치 특이값 튄값 outlier anomaly 없음 끔 차단 slash off disabled",
+   "hue": "red",
+   "base": false
+  },
+  {
+   "name": "outlier.square",
+   "cat": "data",
+   "kw": "이상치 특이값 튄값 outlier anomaly 사각 안 square",
+   "hue": "red",
    "base": false
   },
   {
@@ -6315,6 +6791,34 @@
    "base": false
   },
   {
+   "name": "pnl",
+   "cat": "finance",
+   "kw": "손익 수익률 평가손익 이익 손실 profit loss",
+   "hue": "red",
+   "base": true
+  },
+  {
+   "name": "pnl.circle",
+   "cat": "finance",
+   "kw": "손익 수익률 평가손익 이익 손실 profit loss 원 안 circle",
+   "hue": "red",
+   "base": false
+  },
+  {
+   "name": "pnl.slash",
+   "cat": "finance",
+   "kw": "손익 수익률 평가손익 이익 손실 profit loss 없음 끔 차단 slash off disabled",
+   "hue": "red",
+   "base": false
+  },
+  {
+   "name": "pnl.square",
+   "cat": "finance",
+   "kw": "손익 수익률 평가손익 이익 손실 profit loss 사각 안 square",
+   "hue": "red",
+   "base": false
+  },
+  {
    "name": "portfolio",
    "cat": "finance",
    "kw": "포트폴리오 보유종목 업무 portfolio holdings",
@@ -6620,6 +7124,62 @@
    "cat": "text",
    "kw": "인용 블록쿼트 따옴표 quote blockquote 사각 안 square",
    "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "radio-off",
+   "cat": "variables",
+   "kw": "선택안됨 라디오 빈 radio empty",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "radio-off.circle",
+   "cat": "variables",
+   "kw": "선택안됨 라디오 빈 radio empty 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "radio-off.slash",
+   "cat": "variables",
+   "kw": "선택안됨 라디오 빈 radio empty 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "radio-off.square",
+   "cat": "variables",
+   "kw": "선택안됨 라디오 빈 radio empty 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "radio-on",
+   "cat": "variables",
+   "kw": "선택됨 라디오 단일선택 radio selected",
+   "hue": "blue",
+   "base": true
+  },
+  {
+   "name": "radio-on.circle",
+   "cat": "variables",
+   "kw": "선택됨 라디오 단일선택 radio selected 원 안 circle",
+   "hue": "blue",
+   "base": false
+  },
+  {
+   "name": "radio-on.slash",
+   "cat": "variables",
+   "kw": "선택됨 라디오 단일선택 radio selected 없음 끔 차단 slash off disabled",
+   "hue": "blue",
+   "base": false
+  },
+  {
+   "name": "radio-on.square",
+   "cat": "variables",
+   "kw": "선택됨 라디오 단일선택 radio selected 사각 안 square",
+   "hue": "blue",
    "base": false
   },
   {
@@ -7799,6 +8359,34 @@
    "base": false
   },
   {
+   "name": "sparkline",
+   "cat": "data",
+   "kw": "스파크라인 미니차트 추이 sparkline",
+   "hue": "blue",
+   "base": true
+  },
+  {
+   "name": "sparkline.circle",
+   "cat": "data",
+   "kw": "스파크라인 미니차트 추이 sparkline 원 안 circle",
+   "hue": "blue",
+   "base": false
+  },
+  {
+   "name": "sparkline.slash",
+   "cat": "data",
+   "kw": "스파크라인 미니차트 추이 sparkline 없음 끔 차단 slash off disabled",
+   "hue": "blue",
+   "base": false
+  },
+  {
+   "name": "sparkline.square",
+   "cat": "data",
+   "kw": "스파크라인 미니차트 추이 sparkline 사각 안 square",
+   "hue": "blue",
+   "base": false
+  },
+  {
    "name": "speaker",
    "cat": "devices",
    "kw": "스피커 오디오 speaker audio",
@@ -7995,6 +8583,34 @@
    "base": false
   },
   {
+   "name": "stepper",
+   "cat": "variables",
+   "kw": "수량조절 증감 스테퍼 stepper counter",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "stepper.circle",
+   "cat": "variables",
+   "kw": "수량조절 증감 스테퍼 stepper counter 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "stepper.slash",
+   "cat": "variables",
+   "kw": "수량조절 증감 스테퍼 stepper counter 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "stepper.square",
+   "cat": "variables",
+   "kw": "수량조절 증감 스테퍼 stepper counter 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
    "name": "stethoscope",
    "cat": "health",
    "kw": "청진기 진료 검진 stethoscope checkup",
@@ -8028,6 +8644,34 @@
    "kw": "정지 종료 stop",
    "hue": "red",
    "base": true
+  },
+  {
+   "name": "stop-loss",
+   "cat": "finance",
+   "kw": "손절 스톱로스 하한 방어선 stop loss",
+   "hue": "red",
+   "base": true
+  },
+  {
+   "name": "stop-loss.circle",
+   "cat": "finance",
+   "kw": "손절 스톱로스 하한 방어선 stop loss 원 안 circle",
+   "hue": "red",
+   "base": false
+  },
+  {
+   "name": "stop-loss.slash",
+   "cat": "finance",
+   "kw": "손절 스톱로스 하한 방어선 stop loss 없음 끔 차단 slash off disabled",
+   "hue": "red",
+   "base": false
+  },
+  {
+   "name": "stop-loss.square",
+   "cat": "finance",
+   "kw": "손절 스톱로스 하한 방어선 stop loss 사각 안 square",
+   "hue": "red",
+   "base": false
   },
   {
    "name": "stop.circle",
@@ -9395,6 +10039,34 @@
    "base": false
   },
   {
+   "name": "volume-bar",
+   "cat": "finance",
+   "kw": "거래량 체결량 막대 volume",
+   "hue": "slate",
+   "base": true
+  },
+  {
+   "name": "volume-bar.circle",
+   "cat": "finance",
+   "kw": "거래량 체결량 막대 volume 원 안 circle",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "volume-bar.slash",
+   "cat": "finance",
+   "kw": "거래량 체결량 막대 volume 없음 끔 차단 slash off disabled",
+   "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "volume-bar.square",
+   "cat": "finance",
+   "kw": "거래량 체결량 막대 volume 사각 안 square",
+   "hue": "slate",
+   "base": false
+  },
+  {
    "name": "volume-high",
    "cat": "media",
    "kw": "볼륨 크게 소리 volume high",
@@ -9616,6 +10288,34 @@
    "cat": "devices",
    "kw": "워치 스마트워치 watch wearable 사각 안 square",
    "hue": "slate",
+   "base": false
+  },
+  {
+   "name": "watchlist",
+   "cat": "finance",
+   "kw": "관심종목 즐겨찾기 목록 watchlist",
+   "hue": "amber",
+   "base": true
+  },
+  {
+   "name": "watchlist.circle",
+   "cat": "finance",
+   "kw": "관심종목 즐겨찾기 목록 watchlist 원 안 circle",
+   "hue": "amber",
+   "base": false
+  },
+  {
+   "name": "watchlist.slash",
+   "cat": "finance",
+   "kw": "관심종목 즐겨찾기 목록 watchlist 없음 끔 차단 slash off disabled",
+   "hue": "amber",
+   "base": false
+  },
+  {
+   "name": "watchlist.square",
+   "cat": "finance",
+   "kw": "관심종목 즐겨찾기 목록 watchlist 사각 안 square",
+   "hue": "amber",
    "base": false
   },
   {
@@ -9898,8 +10598,8 @@
  },
  "stroke": 1.6,
  "count": {
-  "base": 353,
-  "derived": 1053,
-  "total": 1406
+  "base": 378,
+  "derived": 1128,
+  "total": 1506
  }
 }
