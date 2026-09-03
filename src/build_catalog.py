@@ -3,6 +3,7 @@ import os, sys, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from icondata import ICONS, PALETTE, CATS, STROKE, C, SR
 from derive import derive
+from synonyms import SYN
 NDER = len(derive(ICONS, C, SR))   # 파생 수는 세어서 쓴다 — 손으로 적으면 어긋난다
 
 ROOT = os.environ.get("IMT_ROOT", os.path.expanduser("~/imt-icons/dist"))
@@ -17,7 +18,9 @@ TOKENS = open(_TOK, encoding="utf-8").read() if os.path.exists(_TOK) else ""
 names = sorted(ICONS)
 sprite = open(f"{ROOT}/sprite.svg").read()
 sq = open(f"{ROOT}/icons/badge/{names[0]}.svg").read().split('<path d="')[1].split('"')[0]
-DATA = {n: {"c": ICONS[n]["cat"], "k": ICONS[n]["kw"], "h": ICONS[n]["hue"],
+DATA = {n: {"c": ICONS[n]["cat"],
+            "k": (ICONS[n]["kw"] + " " + SYN.get(n, "")).strip(),
+            "h": ICONS[n]["hue"],
             "o": [[k, d] for k, d in ICONS[n]["ops"]]} for n in names}
 
 HTML = """<!doctype html>
@@ -182,7 +185,7 @@ footer{color:var(--sub);font-size:12.5px;text-align:center;margin-top:52px;line-
 <div class="bar">
  <div class="row">
   <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.6" cy="10.6" r="6.6"/><path d="M15.4 15.4L20 20"/></svg>
-   <input id="q" type="search" placeholder="이름 · 한글 키워드로 검색 (예: 차트, 알림, chart)" autocomplete="off"></label>
+   <input id="q" type="search" placeholder="이름 · 한글 · 초성으로 검색 (예: 나가기, 통계, ㅇㄹㅁ, chart)" autocomplete="off"></label>
   <div class="seg"><button id="mGlyph" aria-pressed="true">글리프</button><button id="mBadge" aria-pressed="false">배지</button></div>
   <div class="seg"><button id="mBase" aria-pressed="true">원본 __NB__</button><button id="mAll" aria-pressed="false">파생 포함 __NT__</button></div>
  </div>
@@ -277,12 +280,63 @@ mAll.onclick=()=>setScope(true);
 mGlyph.onclick=()=>{mode="glyph";mGlyph.setAttribute("aria-pressed","true");mBadge.setAttribute("aria-pressed","false");render()};
 mBadge.onclick=()=>{mode="badge";mBadge.setAttribute("aria-pressed","true");mGlyph.setAttribute("aria-pressed","false");render()};
 
+/* ── 검색 ────────────────────────────────────────────────────
+   부분일치 하나로는 «bell» 을 쳤을 때 dumbbell 이 먼저 나온다.
+   점수를 매겨 정렬하고, 초성으로도 찾게 하고, 0건이면 대안을 보여준다.
+   2026-09-03 감사에서 «있는데 못 찾아 다시 그린» 것이 110여 종이었다. */
+const CHO="ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ";
+function chosung(str){
+  let o="";
+  for(const ch of str){
+    const c=ch.charCodeAt(0)-0xAC00;
+    if(c>=0 && c<11172) o+=CHO[Math.floor(c/588)];
+    else if(/[ㄱ-ㅎ]/.test(ch)) o+=ch;
+    else o+=" ";
+  }
+  return o;
+}
+const CHO_IDX={};
+function choOf(n){
+  if(CHO_IDX[n]===undefined) CHO_IDX[n]=chosung(DATA[n].k);
+  return CHO_IDX[n];
+}
+const isCho=t=>/^[ㄱ-ㅎ]{2,}$/.test(t);
+
+function score(n,t){
+  const name=n.toLowerCase(), kw=DATA[n].k.toLowerCase();
+  if(name===t) return 1000;
+  if(name.split(".")[0]===t) return 900;              // bell 이 bell.circle 보다 앞
+  if(name.startsWith(t)) return 800;
+  const words=kw.split(/\s+/);
+  if(words.includes(t)) return 700;                    // 키워드 통째로 일치
+  if(words.some(w=>w.startsWith(t))) return 500;
+  if(name.includes(t)) return 300;                     // dumbbell 은 여기까지 밀린다
+  if(kw.includes(t)) return 200;
+  if((CATS[DATA[n].c]||"").toLowerCase().includes(t)) return 100;
+  if(isCho(t) && choOf(n).replace(/ /g,"").includes(t)) return 400;   // 초성
+  return 0;
+}
+
 function render(){
   const t=q.value.trim().toLowerCase();
-  const list=names.filter(n=>(showAll || !n.includes("."))
-    && (cat==="all"||DATA[n].c===cat)
-    && (!t || n.includes(t) || DATA[n].k.toLowerCase().includes(t) || (CATS[DATA[n].c]||"").toLowerCase().includes(t)));
-  document.getElementById("count").textContent = `${list.length}개`;
+  const pool=names.filter(n=>(showAll || !n.includes("."))
+    && (cat==="all"||DATA[n].c===cat));
+  let list;
+  if(!t){ list=pool; }
+  else{
+    list=pool.map(n=>[n,score(n,t)]).filter(x=>x[1]>0)
+             .sort((a,b)=>b[1]-a[1] || a[0].length-b[0].length || a[0].localeCompare(b[0]))
+             .map(x=>x[0]);
+  }
+  const c=document.getElementById("count");
+  if(t && !list.length){
+    // 0건 — 같은 글자를 품은 것이라도 보여준다
+    const near=pool.filter(n=>[...t].some(ch=>DATA[n].k.includes(ch))).slice(0,24);
+    c.innerHTML = `<b>${t}</b> 결과 없음 · 비슷한 것 ${near.length}개`;
+    list=near;
+  }else{
+    c.textContent = `${list.length}개`;
+  }
   grid.innerHTML = list.map(n=>`<button class="cell ${mode}" data-n="${n}"><div class="g">${
     mode==="glyph"?glyphSVG(n,28):badgeSVG(n,44)}</div><div class="n">${n}</div></button>`).join("");
 }
