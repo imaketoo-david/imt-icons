@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 import os, sys, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from icondata import ICONS, PALETTE, CATS, STROKE
+from icondata import ICONS, PALETTE, CATS, STROKE, C, SR
+from derive import derive
+
+# 파생 3축(.circle .square .slash) — 그림이 아니라 변환으로 만든다.
+DER = derive(ICONS, C, SR)
 
 ROOT = os.environ.get("IMT_ROOT", os.path.expanduser("~/imt-icons/dist"))
 os.makedirs(f"{ROOT}/icons/glyph", exist_ok=True)
@@ -54,11 +58,18 @@ SQ = squircle()
 GLYPH_SCALE = 0.52
 
 meta = []
-for name, ic in sorted(ICONS.items()):
+# 낱개 글리프는 파생분까지 전부 내보낸다(가져다 쓰는 사람이 파일 하나만 받으면 되게).
+# 앱 배지는 원본만 만든다 — 감싼 아이콘을 다시 사각 배지에 넣을 일이 없다.
+for name, ic in sorted({**ICONS, **DER}.items()):
     # ---- glyph (24x24, currentColor)
     g = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" '
          f'fill="none" role="img" aria-label="{name}">' + body(ic["ops"]) + '</svg>')
     open(f"{ROOT}/icons/glyph/{name}.svg", "w").write(g)
+
+    meta.append({"name": name, "cat": ic["cat"], "kw": ic["kw"], "hue": ic["hue"],
+                 "base": "." not in name})
+    if "." in name:
+        continue
 
     # ---- badge (512x512, squircle + white glyph)
     base = PALETTE[ic["hue"]]
@@ -70,17 +81,26 @@ for name, ic in sorted(ICONS.items()):
          + body(ic["ops"], "#FFFFFF", "#FFFFFF") + '</g></svg>')
     open(f"{ROOT}/icons/badge/{name}.svg", "w").write(b)
 
-    meta.append({"name": name, "cat": ic["cat"], "kw": ic["kw"], "hue": ic["hue"]})
+# ---- 스프라이트는 둘로 나눈다.
+#      한 파일에 1,333개를 담으면 330KB 가 되어 원본만 쓰는 화면까지 벌을 받는다.
+#      sprite.svg = 원본 334 (기본 로드) · sprite-derived.svg = 파생 999 (필요할 때만)
+def make_sprite(d):
+    sym = [f'<symbol id="i-{n}" viewBox="0 0 24 24">{body(i["ops"], inherit=True)}</symbol>'
+           for n, i in sorted(d.items())]
+    return ('<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">'
+            + "".join(sym) + '</svg>')
 
-# ---- sprite
-sym = []
-for name, ic in sorted(ICONS.items()):
-    sym.append(f'<symbol id="i-{name}" viewBox="0 0 24 24">'
-               f'{body(ic["ops"], inherit=True)}</symbol>')
-sprite = ('<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">'
-          + "".join(sym) + '</svg>')
+sprite = make_sprite(ICONS)
 open(f"{ROOT}/sprite.svg", "w").write(sprite)
+sprite_d = make_sprite(DER)
+open(f"{ROOT}/sprite-derived.svg", "w").write(sprite_d)
 
-json.dump({"icons": meta, "palette": PALETTE, "cats": CATS, "stroke": STROKE},
+json.dump({"icons": meta, "palette": PALETTE, "cats": CATS, "stroke": STROKE,
+           "count": {"base": len(ICONS), "derived": len(DER), "total": len(meta)}},
           open(f"{ROOT}/icons.json", "w"), ensure_ascii=False, indent=1)
-print("glyph/badge/sprite OK:", len(meta), "| sprite bytes:", len(sprite))
+# 카탈로그가 «파생 포함» 을 켤 때만 받아가는 데이터
+json.dump({n: {"c": i["cat"], "k": i["kw"], "h": i["hue"],
+               "o": [[k, d] for k, d in i["ops"]]} for n, i in sorted(DER.items())},
+          open(f"{ROOT}/icons-derived.json", "w"), ensure_ascii=False, separators=(",", ":"))
+print(f"glyph {len(meta)} (원본 {len(ICONS)} + 파생 {len(DER)}) | "
+      f"sprite {len(sprite)}B · 파생 {len(sprite_d)}B")

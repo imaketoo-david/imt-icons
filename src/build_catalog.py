@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 import os, sys, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from icondata import ICONS, PALETTE, CATS, STROKE
+from icondata import ICONS, PALETTE, CATS, STROKE, C, SR
+from derive import derive
+NDER = len(derive(ICONS, C, SR))   # 파생 수는 세어서 쓴다 — 손으로 적으면 어긋난다
 
 ROOT = os.environ.get("IMT_ROOT", os.path.expanduser("~/imt-icons/dist"))
 
@@ -170,10 +172,11 @@ footer{color:var(--sub);font-size:12.5px;text-align:center;margin-top:52px;line-
 <div class="wrap">
 <header class="phead phead--top">
   <p class="phead__k"><span class="n">04</span>아이콘</p>
-  <h1>좌표로 그린 __N__종</h1>
+  <h1>좌표로 그린 __NB__종</h1>
   <p>24 그리드 위에 하나씩 직접 그렸다. 굵기 9단·크기 3단이 CSS 변수 두 개로 움직인다.
-     아이콘을 누르면 코드가 복사된다.</p>
-  <p class="phead__m"><span>24 그리드</span><span>굵기 9단 · 크기 3단</span><span>눌러서 복사</span></p>
+     여기에 <code>.circle</code>·<code>.square</code>·<code>.slash</code> 세 축을 변환으로 얹어
+     모두 __NT__종이 된다 — 그림을 늘린 것이 아니라 계산으로 만든 것이다.</p>
+  <p class="phead__m"><span>24 그리드</span><span>굵기 9단 · 크기 3단</span><span>파생 3축</span><span>눌러서 복사</span></p>
 </header>
 
 <div class="bar">
@@ -181,6 +184,7 @@ footer{color:var(--sub);font-size:12.5px;text-align:center;margin-top:52px;line-
   <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.6" cy="10.6" r="6.6"/><path d="M15.4 15.4L20 20"/></svg>
    <input id="q" type="search" placeholder="이름 · 한글 키워드로 검색 (예: 차트, 알림, chart)" autocomplete="off"></label>
   <div class="seg"><button id="mGlyph" aria-pressed="true">글리프</button><button id="mBadge" aria-pressed="false">배지</button></div>
+  <div class="seg"><button id="mBase" aria-pressed="true">원본 __NB__</button><button id="mAll" aria-pressed="false">파생 포함 __NT__</button></div>
  </div>
 </div>
 
@@ -217,7 +221,7 @@ footer{color:var(--sub);font-size:12.5px;text-align:center;margin-top:52px;line-
 <script>
 const DATA = __DATA__, CATS = __CATS__, PALETTE = __PALETTE__, SW = __SW__;
 const SQ = "__SQ__", RATIO = 0.52;
-const names = Object.keys(DATA).sort();
+const names = Object.keys(DATA).sort();   // 파생을 받으면 여기에 합쳐진다
 let mode = "glyph", cat = "all";
 
 function glyphSVG(n, size){
@@ -249,12 +253,35 @@ chips.onclick=e=>{const b=e.target.closest(".chip"); if(!b)return;
  render();};
 
 const q=document.getElementById("q"); q.oninput=render;
+
+/* 파생 999종은 처음에 받지 않는다. 원본만 보는 사람에게 400KB 를 지울 이유가 없다.
+   스위치를 켜는 순간 한 번만 받아 DATA 에 합친다. */
+let derivedLoaded=false, showAll=false;
+function setScope(all){
+  showAll=all;
+  mBase.setAttribute("aria-pressed", String(!all));
+  mAll.setAttribute("aria-pressed", String(all));
+  if(all && !derivedLoaded){
+    mAll.textContent="받는 중…";
+    fetch("icons-derived.json").then(r=>r.json()).then(d=>{
+      Object.assign(DATA,d); names.length=0;
+      Object.keys(DATA).sort().forEach(n=>names.push(n));
+      derivedLoaded=true; mAll.textContent="파생 포함 "+Object.keys(DATA).length; render();
+    }).catch(()=>{ mAll.textContent="받기 실패"; });
+    return;
+  }
+  render();
+}
+mBase.onclick=()=>setScope(false);
+mAll.onclick=()=>setScope(true);
 mGlyph.onclick=()=>{mode="glyph";mGlyph.setAttribute("aria-pressed","true");mBadge.setAttribute("aria-pressed","false");render()};
 mBadge.onclick=()=>{mode="badge";mBadge.setAttribute("aria-pressed","true");mGlyph.setAttribute("aria-pressed","false");render()};
 
 function render(){
   const t=q.value.trim().toLowerCase();
-  const list=names.filter(n=>(cat==="all"||DATA[n].c===cat) && (!t || n.includes(t) || DATA[n].k.toLowerCase().includes(t) || (CATS[DATA[n].c]||"").toLowerCase().includes(t)));
+  const list=names.filter(n=>(showAll || !n.includes("."))
+    && (cat==="all"||DATA[n].c===cat)
+    && (!t || n.includes(t) || DATA[n].k.toLowerCase().includes(t) || (CATS[DATA[n].c]||"").toLowerCase().includes(t)));
   document.getElementById("count").textContent = `${list.length}개`;
   grid.innerHTML = list.map(n=>`<button class="cell ${mode}" data-n="${n}"><div class="g">${
     mode==="glyph"?glyphSVG(n,28):badgeSVG(n,44)}</div><div class="n">${n}</div></button>`).join("");
@@ -285,7 +312,8 @@ render();
 pal = "\n".join(f"  --imt-{k}:{v};" for k, v in PALETTE.items())
 out = (HTML.replace("__TOKENS__", TOKENS)
             .replace("__PAL__", pal)
-           .replace("__N__", str(len(names)))
+           .replace("__NB__", str(len(names)))
+           .replace("__NT__", str(len(names) + NDER))
            .replace("__SW__", str(STROKE))
            .replace("__DATA__", json.dumps(DATA, ensure_ascii=False, separators=(",", ":")))
            .replace("__CATS__", json.dumps(CATS, ensure_ascii=False))
